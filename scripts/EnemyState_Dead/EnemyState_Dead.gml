@@ -3,8 +3,8 @@
 function EnemyState_Dead(){
 	
 	instance_destroy();
-	instance_create_depth(x+irandom_range(-7,7),y+irandom_range(-5,5),0,oHitEffect);
+	instance_create_layer(x+irandom_range(-7,7),y+irandom_range(-5,5),"Level",oHitEffect);
 	randomize();
-	instance_create_depth(x+irandom_range(-7,7),y+irandom_range(-5,5),0,oHitEffect);
-	instance_create_depth(irandom_range(300,700),430,0,oEnemy);
+	instance_create_layer(x+irandom_range(-7,7),y+irandom_range(-5,5),"Level",oHitEffect);
+	instance_create_layer(irandom_range(300,700),430,"Enemies",oEnemy);
 }
