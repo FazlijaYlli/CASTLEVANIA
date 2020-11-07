@@ -3,7 +3,7 @@
 function BossState_Dead(){
 	if(alarm[1] == -1)
 	{
-		alarm[1] = room_speed * 5;
+		alarm[1] = room_speed * 3;
 		sprite_index = sBossIdle;
 	}
 	else
