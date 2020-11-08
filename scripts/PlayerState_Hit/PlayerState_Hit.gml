@@ -48,6 +48,7 @@ function PlayerState_Hit(){
 			x += sign(hSpeed);
 		}
 		move = -move;
+		hSpeed = 0;
 	}
 
 	//Vertical Collisions

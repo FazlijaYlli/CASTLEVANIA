@@ -14,6 +14,8 @@ function PlayerState_Moving(){
 		crouch = false; 
 	}
 	
+	image_speed = 1;
+	
 	if(!crouch or crouch and !place_meeting(x,y+1,oWall))
 	{
 		//If direction is changed and sprite inversion is not already applied, apply it.
@@ -131,6 +133,11 @@ function PlayerState_Moving(){
 			}
 			mask_index = sSimonIdle;
 		}
+	}
+	
+	if(!instance_exists(oBoss))
+	{
+		instance_destroy(currentDoor);	
 	}
 }
 

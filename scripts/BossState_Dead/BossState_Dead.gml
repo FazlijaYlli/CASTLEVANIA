@@ -11,9 +11,10 @@ function BossState_Dead(){
 		if(alarm[1] == 0)
 		{
 			alarm[1] = -1;
+			global.isBossMet = false;
 			instance_destroy();
 		}
-		else if (alarm[1] % 20 == 0)
+		else if (alarm[1] % 10 == 0)
 		{
 			instance_create_layer(x+irandom_range(-sprite_get_width(sEnemyidle),sprite_get_width(sEnemyidle)),y+irandom_range(-sprite_get_height(sEnemyidle),sprite_get_height(sEnemyidle)),"Level",oHitEffect);
 			audio_play_sound(sndEnemyDeath,0,false);

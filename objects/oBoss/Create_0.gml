@@ -1,10 +1,10 @@
 randomize();
 move = 0;
-hp = 1;
+hp = 20;
 hpMax = hp;
 hSpeed = 0;
 vSpeed = 0;
-wSpeed = 0.75;
+wSpeed = 0.4;
 gravForce = 0.5;
 state = ENEMYSTATE.MOVING;
 canBeHit = true;

@@ -71,7 +71,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 66,
-    "yorigin": 20,
+    "yorigin": 19,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSimonAttack","path":"sprites/sSimonAttack/sSimonAttack.yy",},
