@@ -43,4 +43,16 @@ function EnemyState_Moving(){
 	{
 		move = -move;
 	}
+	
+	if(place_meeting(x,y,oPlayer))
+	{
+		with(oPlayer)
+		{
+			if(!invincible and hp > 0)
+			{
+				state = PLAYERSTATE.HIT;
+				hp -= 1;
+			}
+		}
+	}
 }

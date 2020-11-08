@@ -15,7 +15,7 @@ function BossState_Dead(){
 		}
 		else if (alarm[1] % 20 == 0)
 		{
-			instance_create_layer(x+irandom_range(-10,10),y+irandom_range(-10,10),"Level",oHitEffect);
+			instance_create_layer(x+irandom_range(-sprite_get_width(sEnemyidle),sprite_get_width(sEnemyidle)),y+irandom_range(-sprite_get_height(sEnemyidle),sprite_get_height(sEnemyidle)),"Level",oHitEffect);
 			audio_play_sound(sndEnemyDeath,0,false);
 			randomize();
 		}

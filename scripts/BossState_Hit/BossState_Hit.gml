@@ -11,7 +11,6 @@ function BossState_Hit(){
 			audio_play_sound(sndEnemyDeath,0,false);
 		}
 	}
-	
 	else if (canBeHit)
 	{
 		hp -= 1;
@@ -57,9 +56,9 @@ function BossState_Hit(){
 		vSpeed = 0;
 	}
 	
-	if (image_xscale != -move) 
+	if(hp > 0 and image_xscale != -move)
 	{
-		image_xscale = -move;
+		image_xscale = -move * 2;
 	}
 	
 	#endregion Mouvement & Collisions

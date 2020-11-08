@@ -2,6 +2,11 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 pour plus d’informations
 function BossState_Moving(){
 
+	if(move = 0 and global.isBossMet)
+	{
+		move = choose(1, -1);
+	}
+
 	//Horizontal Movement 
 	hSpeed = move * wSpeed;
 	//Vertical Movement 
@@ -10,7 +15,7 @@ function BossState_Moving(){
 	//Turning the sprites when going in opposite direction.
 	if (image_xscale != -move) 
 	{
-		image_xscale = -move;
+		image_xscale = -move * 2;
 	}
 	
 	//Horizontal Collisions
@@ -37,10 +42,42 @@ function BossState_Moving(){
 	
 	y += vSpeed;
 
+	if(global.isBossMet)
+	{
+		if(!audio_is_playing(musSkeletonLords))
+		{
+			audio_stop_all();
+			audio_play_sound(musSkeletonLords,0,false);
+		}
+	}
+	
+	with(oPlayer)
+	{
+		if(state = PLAYERSTATE.DEAD)
+		{
+			global.isBossMet = false;
+		}
+	}
 	
 	//Turning back when arrives at pitfall.
 	if(!place_meeting(x+sprite_get_width(sBossWalking)*move,y+1, oWall))
 	{
 		move = -move;
+	}
+	
+	if(place_meeting(x,y,oPlayer))
+	{
+		with(oPlayer)
+		{
+			if(state != PLAYERSTATE.DEAD)
+			{
+				global.isBossMet = true;	
+			}
+			if(!invincible and hp > 0)
+			{
+				state = PLAYERSTATE.HIT;
+				hp -= 3;
+			}
+		}
 	}
 }

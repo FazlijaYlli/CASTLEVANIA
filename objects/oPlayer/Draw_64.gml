@@ -19,8 +19,20 @@ switch(state)
 		draw_text(0,30,"STATE : ON_STAIRS");
 		break;
 	case 5:
-		draw_text(0,30,"STATE : MOVING");
+		draw_text(0,30,"STATE : HIT");
 		break;
+	case 6:
+		draw_text(0,30,"STATE : DEAD");
+		break;
+	case 7:
+		draw_text(0,30,"STATE : FOG_GATE");
+	break;
 }
 
+draw_text(0,105,"INVINCIBLE: "+string(invincible));
 
+if(dead)
+{
+	draw_set_font(fntBoss);
+	draw_text_color(window_get_width()/2, window_get_height()/2,"YOU DIEDED",c_red,c_red,c_red,c_red,1);
+}

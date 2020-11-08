@@ -3,6 +3,10 @@ vSpeed = 0;
 wSpeed = 1;
 jumpHeight = 6;
 gravForce = 0.5;
+hp = 20;
+canBeHit = true;
+invincible = false;
+dead = false;
 
 crouch = false;
 
@@ -26,5 +30,8 @@ enum PLAYERSTATE
 	ATTACK,
 	CROUCH_ATTACK,
 	STAIR_ATTACK,
-	ON_STAIRS
+	ON_STAIRS,
+	HIT,
+	DEAD,
+	FOG_GATE
 }

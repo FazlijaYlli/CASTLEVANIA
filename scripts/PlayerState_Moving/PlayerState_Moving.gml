@@ -14,7 +14,6 @@ function PlayerState_Moving(){
 		crouch = false; 
 	}
 	
-	
 	if(!crouch or crouch and !place_meeting(x,y+1,oWall))
 	{
 		//If direction is changed and sprite inversion is not already applied, apply it.
@@ -27,9 +26,9 @@ function PlayerState_Moving(){
 			sprite_index = sSimonIdle;
 		}
 		
-		//Horizontal Movement 
+		//Horizontal Movement
 		hSpeed = move * wSpeed;
-		//Vertical Movement 
+		//Vertical Movement
 		vSpeed = vSpeed + gravForce;
 
 		//If touching the ground.
@@ -115,7 +114,23 @@ function PlayerState_Moving(){
 	}
 	else if (keyAttack)//Attacking normally while standing.
 	{
+		mask_index = sSimonIdle;
+		sprite_index = sSimonIdle;
 		state = PLAYERSTATE.ATTACK;
+	}
+	
+	if(keyInteract)
+	{
+		if(!global.isBossMet)
+		{
+			mask_index = sSimonStairsUpHB;
+			if(place_meeting(x,y,oDoor))
+			{
+				currentDoor = instance_place(x,y,oDoor);
+				state = PLAYERSTATE.FOG_GATE;
+			}
+			mask_index = sSimonIdle;
+		}
 	}
 }
 

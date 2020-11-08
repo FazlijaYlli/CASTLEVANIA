@@ -1,0 +1,1 @@
+audio_play_sound(musVampireKiller, 0, true);
