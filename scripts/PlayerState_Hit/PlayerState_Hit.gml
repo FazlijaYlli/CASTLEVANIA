@@ -5,6 +5,11 @@ function PlayerState_Hit(){
 	//Vertical Movement 
 	vSpeed = vSpeed + gravForce;
 	
+	goingToStairsUp = false;
+	climbingStairsUp = false;
+	goingToStairsDown = false;
+	climbingStairsDown = false;
+	
 	if(!place_meeting(x,y+1,oWall) and canBeHit)
 	{
 		vSpeed = 0;	
