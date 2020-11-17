@@ -1,6 +1,6 @@
 randomize();
 move = 0;
-hp = 20;
+hp = 5;
 hpMax = hp;
 hSpeed = 0;
 vSpeed = 0;

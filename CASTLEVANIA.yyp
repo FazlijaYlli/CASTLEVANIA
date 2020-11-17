@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"sHealthBarBorder","path":"sprites/sHealthBarBorder/sHealthBarBorder.yy",},"order":1,},
     {"id":{"name":"sSimonStairsUpHB","path":"sprites/sSimonStairsUpHB/sSimonStairsUpHB.yy",},"order":1,},
+    {"id":{"name":"sBonfire","path":"sprites/sBonfire/sBonfire.yy",},"order":10,},
     {"id":{"name":"animation_end","path":"scripts/animation_end/animation_end.yy",},"order":0,},
     {"id":{"name":"sHealthBar","path":"sprites/sHealthBar/sHealthBar.yy",},"order":0,},
     {"id":{"name":"EnemyState_Hit","path":"scripts/EnemyState_Hit/EnemyState_Hit.yy",},"order":2,},
@@ -27,6 +28,7 @@
     {"id":{"name":"PlayerState_FogGate","path":"scripts/PlayerState_FogGate/PlayerState_FogGate.yy",},"order":8,},
     {"id":{"name":"sSimonStairsAscendAttackHB","path":"sprites/sSimonStairsAscendAttackHB/sSimonStairsAscendAttackHB.yy",},"order":2,},
     {"id":{"name":"sEnemyidle","path":"sprites/sEnemyidle/sEnemyidle.yy",},"order":1,},
+    {"id":{"name":"oBonfire","path":"objects/oBonfire/oBonfire.yy",},"order":8,},
     {"id":{"name":"sEnemyWalking","path":"sprites/sEnemyWalking/sEnemyWalking.yy",},"order":0,},
     {"id":{"name":"PlayerState_Dead","path":"scripts/PlayerState_Dead/PlayerState_Dead.yy",},"order":7,},
     {"id":{"name":"sBossWalking","path":"sprites/sBossWalking/sBossWalking.yy",},"order":1,},
@@ -57,6 +59,7 @@
     {"id":{"name":"oBoss","path":"objects/oBoss/oBoss.yy",},"order":6,},
     {"id":{"name":"PlayerState_OnStairsOld","path":"scripts/PlayerState_OnStairsOld/PlayerState_OnStairsOld.yy",},"order":4,},
     {"id":{"name":"sSimonStairsDescend","path":"sprites/sSimonStairsDescend/sSimonStairsDescend.yy",},"order":8,},
+    {"id":{"name":"fntDebug","path":"fonts/fntDebug/fntDebug.yy",},"order":1,},
     {"id":{"name":"PlayerState_CrouchAttack","path":"scripts/PlayerState_CrouchAttack/PlayerState_CrouchAttack.yy",},"order":2,},
     {"id":{"name":"BossState_Hit","path":"scripts/BossState_Hit/BossState_Hit.yy",},"order":1,},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},"order":1,},

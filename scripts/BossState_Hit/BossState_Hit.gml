@@ -1,8 +1,6 @@
 // Les actifs du script ont changé pour v2.3.0 Voir
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 pour plus d’informations
 function BossState_Hit(){
-	
-	
 	if (hp <= 0)
 	{
 		state = ENEMYSTATE.DEAD;
@@ -27,7 +25,7 @@ function BossState_Hit(){
 			hSpeed += 5 * -sign(oPlayer.image_xscale);
 			vSpeed -= 2;
 		}
-	}
+	}		
 
 	#region Mouvement & Collisions
 	//Horizontal Movement 

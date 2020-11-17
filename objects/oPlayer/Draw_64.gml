@@ -1,3 +1,4 @@
+draw_set_font(fntDebug);
 draw_text(0,0,"X: "+string(x));
 draw_text(0,15,"Y: "+string(y));
 

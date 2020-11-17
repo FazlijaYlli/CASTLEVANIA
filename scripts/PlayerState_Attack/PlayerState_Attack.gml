@@ -68,7 +68,10 @@ function PlayerState_Attack(){
 				with (hitID)
 				{
 					//Whatever happens to the enemy
-					state = ENEMYSTATE.HIT;
+					if(hp >= 1)
+					{
+						state = ENEMYSTATE.HIT;
+					}
 				}
 			}
 		}

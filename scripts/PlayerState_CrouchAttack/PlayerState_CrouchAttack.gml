@@ -34,7 +34,10 @@ function PlayerState_CrouchAttack(){
 				with (hitID)
 				{
 					//Whatever happens to the enemy
-					state = ENEMYSTATE.HIT;
+					if(hp >= 1)
+					{
+						state = ENEMYSTATE.HIT;
+					}
 				}
 			}
 		}
