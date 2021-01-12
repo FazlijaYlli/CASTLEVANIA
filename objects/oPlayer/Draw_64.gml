@@ -1,4 +1,5 @@
 draw_set_font(fntDebug);
+draw_set_halign(fa_left);
 draw_text(0,0,"X: "+string(x));
 draw_text(0,15,"Y: "+string(y));
 
@@ -28,12 +29,10 @@ switch(state)
 	case 7:
 		draw_text(0,30,"STATE : FOG_GATE");
 	break;
+	case 8:
+		draw_text(0,30,"STATE : BONFIRE");
+	break;
 }
 
-draw_text(0,105,"INVINCIBLE: "+string(invincible));
-
-if(dead)
-{
-	draw_set_font(fntBoss);
-	draw_text_color(window_get_width()/2, window_get_height()/2,"YOU DIEDED",c_red,c_red,c_red,c_red,1);
-}
+draw_text(0,105,"INVINCIBLE: "+ string(invincible));
+draw_text(0,135,"HP: "+ string(hp));

@@ -76,8 +76,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"099a59b8-3691-405d-a00b-c9cb8ad3895e","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Effects",
+    "path": "folders/Sprites/Effects.yy",
   },
   "resourceVersion": "1.0",
   "name": "sEffectHit0",

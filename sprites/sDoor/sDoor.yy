@@ -72,8 +72,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2faece35-b2ae-417d-ab1b-1e48168a4f32","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Level",
+    "path": "folders/Sprites/Level.yy",
   },
   "resourceVersion": "1.0",
   "name": "sDoor",

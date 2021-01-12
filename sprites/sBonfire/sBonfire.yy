@@ -96,8 +96,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f01db3e4-e848-4ee7-8cc6-11ed70b6632c","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Level",
+    "path": "folders/Sprites/Level.yy",
   },
   "resourceVersion": "1.0",
   "name": "sBonfire",

@@ -1,4 +1,4 @@
-function PlayerState_OnStairs(){
+ function PlayerState_OnStairs(){
 	if(goingToStairsUp)
 	{
 		//Where the player should end up after the movement.

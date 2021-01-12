@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e40b89c8-6390-41d3-b525-86f727cebc2a","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Level",
+    "path": "folders/Sprites/Level.yy",
   },
   "resourceVersion": "1.0",
   "name": "sStairs",

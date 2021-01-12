@@ -1,3 +1,5 @@
+draw_set_font(fntDebug);
+draw_set_halign(fa_left);
 switch(state)
 {
 	case 0:

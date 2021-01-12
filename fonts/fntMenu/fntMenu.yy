@@ -226,7 +226,7 @@
     "path": "folders/Fonts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "fntBoss",
+  "name": "fntMenu",
   "tags": [],
   "resourceType": "GMFont",
 }
