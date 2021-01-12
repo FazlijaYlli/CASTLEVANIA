@@ -5,8 +5,11 @@ function PlayerState_Dead(){
 	dead = true;
 	if(!audio_is_playing(sndDead))
 	{
-		audio_stop_all();
-		audio_play_sound(sndDead,0,false);
+		if(!audio_is_playing(sndEnemyDeath))
+		{
+			audio_stop_all();
+			audio_play_sound(sndDead,0,false);
+		}
 	}
 	if(alarm[2] = -1)
 	{

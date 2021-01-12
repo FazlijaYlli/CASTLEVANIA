@@ -18,6 +18,7 @@ function PlayerState_Moving(){
 	
 	image_speed = 1;
 	
+	//IF STANDING
 	if(!crouch or crouch and !place_meeting(x,y+1,oWall))
 	{
 		//If direction is changed and sprite inversion is not already applied, apply it.

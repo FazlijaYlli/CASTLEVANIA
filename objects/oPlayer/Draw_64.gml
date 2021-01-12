@@ -1,3 +1,8 @@
+
+////////////////////////////////////////////
+/////////////////DEBUG//////////////////////
+////////////////////////////////////////////
+
 draw_set_font(fntDebug);
 draw_set_halign(fa_left);
 draw_text(0,0,"X: "+string(x));
@@ -36,3 +41,12 @@ switch(state)
 
 draw_text(0,105,"INVINCIBLE: "+ string(invincible));
 draw_text(0,135,"HP: "+ string(hp));
+
+////////////////////////////////////////////
+/////////////////DEBUG//////////////////////
+////////////////////////////////////////////
+
+
+draw_sprite_stretched(sHealthBarBg,0,healthbar_x, healthbar_y,healthbar_width,healthbar_height);
+draw_sprite_stretched(sHealthBar,0,healthbar_x,healthbar_y,min((hp/hpMax * healthbar_width), healthbar_width), healthbar_height)
+draw_sprite_stretched(sHealthBarBorder,0,healthbar_x, healthbar_y,healthbar_width,healthbar_height);

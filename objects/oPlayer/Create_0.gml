@@ -1,16 +1,25 @@
+//STATISTICS
 hSpeed = 0;
 vSpeed = 0;
 wSpeed = 1;
-jumpHeight = 6;
-gravForce = 0.5;
-hp = 1;
+jumpHeight = 4.5;
+gravForce = 0.25;
+hp = 5;
+hpMax = hp;
+
+//GUI
+healthbar_width = 300;
+healthbar_height = 20;
+healthbar_x = (window_get_width() * 0.05	);
+healthbar_y = (window_get_height() * 0.05) - (healthbar_height / 4);
+
+//STATES
 canBeHit = true;
 invincible = false;
 dead = false;
-
-i = 0;
-
-crouch = false;
+crouch = false
+state = PLAYERSTATE.MOVING;
+hitList = ds_list_create();
 
 //STAIRS
 goingToStairsUp = false;
@@ -21,11 +30,10 @@ climbingStairsDown = false;
 //AUDIO
 audioCanPlay = true;
 
+//VIEW
 camera = view_camera[0];
 
-state = PLAYERSTATE.MOVING;
-hitList = ds_list_create();
-
+//ENUMS
 enum PLAYERSTATE
 {
 	MOVING,
