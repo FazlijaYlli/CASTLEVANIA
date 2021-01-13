@@ -7,6 +7,8 @@ function BossState_Moving(){
 		move = choose(1, -1);
 	}
 
+	wSpeed = wSpeedBase * hitsTaken + wSpeedBase;
+	
 	//Horizontal Movement 
 	hSpeed = move * wSpeed;
 	//Vertical Movement 
@@ -25,7 +27,7 @@ function BossState_Moving(){
 		{
 			x += sign(hSpeed);
 		}
-		move = -move;
+			move = -move; 
 	}
 
 	x += hSpeed;
@@ -76,7 +78,7 @@ function BossState_Moving(){
 			if(!invincible and hp > 0)
 			{
 				state = PLAYERSTATE.HIT;
-				hp -= 3;
+				hp -= oBoss.damage;
 			}
 		}
 	}

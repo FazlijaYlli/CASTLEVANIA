@@ -1,7 +1,7 @@
 // Les actifs du script ont changé pour v2.3.0 Voir
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 pour plus d’informations
 function EnemyState_Moving(){
-
+	
 	//Horizontal Movement 
 	hSpeed = move * wSpeed;
 	//Vertical Movement 
@@ -51,7 +51,7 @@ function EnemyState_Moving(){
 			if(!invincible and hp > 0)
 			{
 				state = PLAYERSTATE.HIT;
-				hp -= 1;
+				hp -= oEnemy.damage;
 			}
 		}
 	}

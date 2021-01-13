@@ -1,3 +1,26 @@
+draw_sprite_stretched(sHealthBarBg,0,healthbar_x, healthbar_y,healthbar_width,healthbar_height);
+draw_sprite_stretched(sHealthBar,0,healthbar_x,healthbar_y,min((hp/hpMax * healthbar_width), healthbar_width), healthbar_height)
+draw_sprite_stretched(sHealthBarBorder,0,healthbar_x, healthbar_y,healthbar_width,healthbar_height);
+
+if(nearBonfire)
+{
+	if(!oBonfire.used)
+	{
+		draw_set_font(fntMenu);
+		draw_set_halign(fa_center);
+		draw_sprite(sPrompt,0,window_get_width()/2,window_get_height()* 0.85);
+		draw_text(window_get_width()/2,window_get_height()*0.85-12,"E : Se reposer au feu");
+	}
+}
+
+if(nearFogdoor and !global.isBossMet)
+{
+	draw_set_font(fntMenu);
+	draw_set_halign(fa_center);
+	draw_sprite(sPrompt,0,window_get_width()/2,window_get_height()* 0.85);
+	draw_text(window_get_width()/2,window_get_height()*0.85-12,"E : Entrer dans le brouillard");
+}
+
 
 ////////////////////////////////////////////
 /////////////////DEBUG//////////////////////
@@ -45,8 +68,3 @@ draw_text(0,135,"HP: "+ string(hp));
 ////////////////////////////////////////////
 /////////////////DEBUG//////////////////////
 ////////////////////////////////////////////
-
-
-draw_sprite_stretched(sHealthBarBg,0,healthbar_x, healthbar_y,healthbar_width,healthbar_height);
-draw_sprite_stretched(sHealthBar,0,healthbar_x,healthbar_y,min((hp/hpMax * healthbar_width), healthbar_width), healthbar_height)
-draw_sprite_stretched(sHealthBarBorder,0,healthbar_x, healthbar_y,healthbar_width,healthbar_height);

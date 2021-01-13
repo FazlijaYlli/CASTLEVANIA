@@ -11,7 +11,9 @@ function BossState_Hit(){
 	}
 	else if (canBeHit)
 	{
-		hp -= 1;
+		hp -= oPlayer.damage;
+		hitsTaken += 1;
+		image_speed = 1 + (hitsTaken/2);
 		
 		if(!audio_is_playing(sndEnemyHit))
 		{

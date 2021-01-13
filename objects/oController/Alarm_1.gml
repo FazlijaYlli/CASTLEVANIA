@@ -1,2 +1,2 @@
 /// @description ALARME DE RESPAWN
-room_restart();
+instance_create_layer(oBonfire.x + 15,oBonfire.y, "Player", oPlayer);

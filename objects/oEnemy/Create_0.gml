@@ -1,6 +1,7 @@
 randomize();
 move = choose(1, -1);
 hp = 3;
+damage = 75;
 hSpeed = 0;
 vSpeed = 0;
 wSpeed = 0.5;

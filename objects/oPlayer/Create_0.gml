@@ -4,8 +4,10 @@ vSpeed = 0;
 wSpeed = 1;
 jumpHeight = 4.5;
 gravForce = 0.25;
-hp = 5;
+hp = 500;
 hpMax = hp;
+damage = 50;
+lostHp = 0;
 
 //GUI
 healthbar_width = 300;
@@ -17,7 +19,10 @@ healthbar_y = (window_get_height() * 0.05) - (healthbar_height / 4);
 canBeHit = true;
 invincible = false;
 dead = false;
-crouch = false
+crouch = false;
+nearBonfire = false;
+nearFogdoor = false;
+isHealing = false;
 state = PLAYERSTATE.MOVING;
 hitList = ds_list_create();
 
@@ -44,5 +49,6 @@ enum PLAYERSTATE
 	HIT,
 	DEAD,
 	FOG_GATE,
-	BONFIRE
+	BONFIRE,
+	ROLL
 }

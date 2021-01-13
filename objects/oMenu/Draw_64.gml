@@ -1,3 +1,5 @@
+draw_set_font(fntMenu);
+draw_set_halign(fa_left);
 draw_sprite_stretched(sMenu,0,posX,posY,150,30+separation*array_length_1d(menu));
 
 for (i = 0; i < array_length_1d(menu); i += 1) {

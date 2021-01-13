@@ -6,6 +6,7 @@ keyJump = keyboard_check_pressed(vk_space);
 keyCrouch = keyboard_check(vk_down);
 keyAttack = keyboard_check_pressed(ord("F"));
 keyInteract = keyboard_check_pressed(ord("E"));
+keyRoll = keyboard_check_pressed(vk_control);
 
 camera_set_view_pos(camera,x-camera_get_view_width(camera)/2,camera_get_view_y(camera));
 
@@ -37,5 +38,8 @@ switch (state)
 	break;
 	case PLAYERSTATE.BONFIRE:
 		PlayerState_Bonfire();
+	break;
+	case PLAYERSTATE.ROLL:
+		PlayerState_Roll();
 	break;
 }

@@ -32,7 +32,7 @@ function EnemyState_Hit(){
 		{
 			audio_play_sound(sndEnemyHit,0,false);
 		}
-		hp -= 1;
+		hp -= oPlayer.damage;
 		canBeHit = false;
 	}
 

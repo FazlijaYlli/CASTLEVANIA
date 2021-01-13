@@ -4,7 +4,10 @@ function PlayerState_Moving(){
 	//move will equal 1 with going to the right, -1 going to the left and 0 if standing still or rpessing both directions.
 	move = keyRight - keyLeft;
 	
-	//instance_destroy(oMenu);
+	with(oBonfire)
+	{
+		used = false;	
+	}
 	
 	//Update crouching.
 	if(keyCrouch) 
@@ -124,6 +127,30 @@ function PlayerState_Moving(){
 		state = PLAYERSTATE.ATTACK;
 	}
 	
+	//Testing if player is near a bonfire.
+	mask_index = sSimonStairsUpHB;
+	if(place_meeting(x,y,oBonfire) and place_meeting(x,y+1,oWall))
+	{
+		nearBonfire = true;
+	}
+	else
+	{
+		nearBonfire = false;	
+	}
+	mask_index = sSimonIdle;
+	
+	//Testing if player is near a fog wall.
+	mask_index = sSimonFrontHB;
+	if(place_meeting(x,y,oDoor) and place_meeting(x,y+1,oWall))
+	{
+		nearFogdoor = true;
+	}
+	else
+	{
+		nearFogdoor = false;	
+	}
+	mask_index = sSimonIdle;
+	
 	//If the Interact key is pressed.
 	if(keyInteract)
 	{
@@ -137,6 +164,7 @@ function PlayerState_Moving(){
 			}
 			mask_index = sSimonIdle;
 		}
+		
 		mask_index = sSimonStairsUpHB;
 		if(place_meeting(x,y,oBonfire) and place_meeting(x,y+1,oWall))
 		{
@@ -145,6 +173,7 @@ function PlayerState_Moving(){
 		mask_index = sSimonIdle;
 	}
 	
+	//If the boss doesn't exist anymore, delete the fogwall.
 	if(!instance_exists(oBoss))
 	{
 		instance_destroy(currentDoor);

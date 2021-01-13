@@ -1,13 +1,16 @@
 randomize();
 move = 0;
-hp = 5;
+hp = 750;
 hpMax = hp;
+damage = 200;
 hSpeed = 0;
 vSpeed = 0;
+wSpeedBase = 0.2;
 wSpeed = 0.4;
 gravForce = 0.5;
 state = ENEMYSTATE.MOVING;
 canBeHit = true;
+hitsTaken = 1;
 global.isBossMet = false;
 
 healthbar_width = 578;
