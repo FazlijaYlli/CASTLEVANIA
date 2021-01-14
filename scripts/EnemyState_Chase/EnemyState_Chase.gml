@@ -1,9 +1,11 @@
-// Les actifs du script ont changé pour v2.3.0 Voir
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 pour plus d’informations
-function EnemyState_Moving(){
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function EnemyState_Chase(){
 	
-	wSpeed = 0.5;
-	image_speed = 1;
+	if(alarm[1] == -1)
+	{
+		alarm[1] = reactTime;
+	}
 	
 	//Horizontal Movement 
 	hSpeed = move * wSpeed;
@@ -23,15 +25,7 @@ function EnemyState_Moving(){
 		{
 			x += sign(hSpeed);
 		}
-		
-		if(distance_to_object(oPlayer) > detectionRadius)
-		{
-			move = -move;	
-		}
-		else
-		{
-			hSpeed = 0;	
-		}
+		hSpeed = 0;
 	}
 
 	x += hSpeed;
@@ -47,18 +41,22 @@ function EnemyState_Moving(){
 	}
 	
 	y += vSpeed;
-
 	
-	//Turning back when arrives at pitfall.
-	if(!place_meeting(x+sprite_get_width(sEnemyWalking)*move,y+1, oWall))
+	//Hitting the player
+	if(place_meeting(x,y,oPlayer))
 	{
-		move = -move;
+		with(oPlayer)
+		{
+			if(!invincible and hp > 0)
+			{
+				state = PLAYERSTATE.HIT;
+				hp -= oEnemy.damage;
+			}
+		}
 	}
 	
-	if(distance_to_object(oPlayer) < detectionRadius)
+	if(distance_to_object(oPlayer) > detectionRadius)
 	{
-		state = ENEMYSTATE.CHASE;
+		state = ENEMYSTATE.MOVING;	
 	}
-	
-	
 }

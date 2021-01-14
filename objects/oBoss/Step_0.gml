@@ -9,4 +9,7 @@ switch (state)
 	case ENEMYSTATE.DEAD: 
 		BossState_Dead();
 	break;
+	case ENEMYSTATE.CHASE: 
+		BossState_Chase();
+	break;
 }

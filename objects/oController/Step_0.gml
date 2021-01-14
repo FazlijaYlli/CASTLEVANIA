@@ -1,4 +1,4 @@
-if (alarm[0] == -1)
+if (alarm[0] == -1 and alarm[1] == -1)
 {
 	with(oPlayer)
 	{
@@ -6,16 +6,16 @@ if (alarm[0] == -1)
 		{
 			with(oController)
 			{
-				restartCinematic = true;	
+				dyingCinematic = true;	
 			}
 		}
 	}
 	
-	if(restartCinematic)
+	if(dyingCinematic)
 	{
 		alarm[0] = 5*room_speed;
 		alarm[1] = 6*room_speed;
-		restartCinematic = false;
+		dyingCinematic = false;
 	}
 }
 

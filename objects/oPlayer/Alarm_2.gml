@@ -1,3 +1,3 @@
 ///@description DESTROY
-instance_destroy();
+sprite_index = sSimonInvisible;
 alarm[2] = -1;

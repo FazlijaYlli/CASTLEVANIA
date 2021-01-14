@@ -1,8 +1,6 @@
 // Les actifs du script ont changé pour v2.3.0 Voir
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 pour plus d’informations
 function EnemyState_Hit(){
-	
-	
 	if (image_xscale != -move) 
 	{
 		image_xscale = -move;
@@ -18,12 +16,7 @@ function EnemyState_Hit(){
 	}
 	
 	if(canBeHit)
-	{
-		if(sign(image_xscale) == sign(oPlayer.image_xscale))
-		{
-			move = -move;
-		}
-		
+	{		
 		alarm[0] = room_speed / 3;
 		
 		hSpeed += 5 * -sign(oPlayer.image_xscale);
@@ -51,7 +44,7 @@ function EnemyState_Hit(){
 		{
 			x += sign(hSpeed);
 		}
-		move = -move;
+		hSpeed = 0;
 	}
 
 	//Vertical Collisions

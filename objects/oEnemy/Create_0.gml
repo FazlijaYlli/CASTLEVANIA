@@ -1,11 +1,13 @@
 randomize();
 move = choose(1, -1);
-hp = 3;
+hp = 100;
+reactTime = 60;
 damage = 75;
 hSpeed = 0;
 vSpeed = 0;
 wSpeed = 0.5;
 gravForce = 0.5;
+detectionRadius = 48;
 state = ENEMYSTATE.MOVING;
 canBeHit = true;
 
@@ -16,5 +18,6 @@ enum ENEMYSTATE
 {
 	MOVING,
 	HIT,
-	DEAD
+	DEAD,
+	CHASE,
 }

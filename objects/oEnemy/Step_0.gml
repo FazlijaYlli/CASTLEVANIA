@@ -9,4 +9,7 @@ switch (state)
 	case ENEMYSTATE.DEAD: 
 		EnemyState_Dead();
 	break;
+	case ENEMYSTATE.CHASE: 
+		EnemyState_Chase();
+	break;
 }

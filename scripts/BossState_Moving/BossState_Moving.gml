@@ -7,7 +7,7 @@ function BossState_Moving(){
 		move = choose(1, -1);
 	}
 
-	wSpeed = wSpeedBase * hitsTaken + wSpeedBase;
+	wSpeed = wSpeedBase * (hitsTaken/3) + wSpeedBase;
 	
 	//Horizontal Movement 
 	hSpeed = move * wSpeed;
@@ -67,19 +67,9 @@ function BossState_Moving(){
 		move = -move;
 	}
 	
-	if(place_meeting(x,y,oPlayer))
+	if(distance_to_object(oPlayer) < detectionRadius)
 	{
-		with(oPlayer)
-		{
-			if(state != PLAYERSTATE.DEAD)
-			{
-				global.isBossMet = true;	
-			}
-			if(!invincible and hp > 0)
-			{
-				state = PLAYERSTATE.HIT;
-				hp -= oBoss.damage;
-			}
-		}
+		state = ENEMYSTATE.CHASE;
 	}
+
 }
