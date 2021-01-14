@@ -44,6 +44,7 @@ function EnemyState_Moving(){
 		move = -move;
 	}
 	
+	//Hitting the player
 	if(place_meeting(x,y,oPlayer))
 	{
 		with(oPlayer)

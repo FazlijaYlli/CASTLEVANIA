@@ -36,6 +36,7 @@
     {"id":{"name":"BossState_Moving","path":"scripts/BossState_Moving/BossState_Moving.yy",},"order":2,},
     {"id":{"name":"PlayerState_Attack","path":"scripts/PlayerState_Attack/PlayerState_Attack.yy",},"order":0,},
     {"id":{"name":"PlayerState_FogGate","path":"scripts/PlayerState_FogGate/PlayerState_FogGate.yy",},"order":8,},
+    {"id":{"name":"sSimonRoll","path":"sprites/sSimonRoll/sSimonRoll.yy",},"order":12,},
     {"id":{"name":"sSimonStairsAscendAttackHB","path":"sprites/sSimonStairsAscendAttackHB/sSimonStairsAscendAttackHB.yy",},"order":2,},
     {"id":{"name":"sEnemyidle","path":"sprites/sEnemyidle/sEnemyidle.yy",},"order":1,},
     {"id":{"name":"oBonfire","path":"objects/oBonfire/oBonfire.yy",},"order":8,},

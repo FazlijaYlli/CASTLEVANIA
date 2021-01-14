@@ -237,7 +237,7 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"oDrop","path":"objects/oDrop/oDrop.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":0.25,"scaleY":0.25,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":64.0,"y":384.0,"resourceVersion":"1.0","name":"inst_69B6E019","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":-300,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":8,"gridY":8,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Level","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
-        {"properties":[],"isDnd":false,"objectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":764.0,"y":452.0,"resourceVersion":"1.0","name":"inst_31AB6272","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":108.0,"y":460.0,"resourceVersion":"1.0","name":"inst_58A4325E","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":-200,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":4,"gridY":4,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[],"visible":true,"depth":-100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":2,"gridY":2,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Items","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
@@ -257,7 +257,6 @@
   "creationCodeFile": "${project_dir}/rooms/rDebug/RoomCreationCode.gml",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_31AB6272","path":"rooms/rDebug/rDebug.yy",},
     {"name":"inst_56FDE7CC","path":"rooms/rDebug/rDebug.yy",},
     {"name":"inst_D6B4277","path":"rooms/rDebug/rDebug.yy",},
     {"name":"inst_3744282","path":"rooms/rDebug/rDebug.yy",},
@@ -485,6 +484,7 @@
     {"name":"inst_6E81848A","path":"rooms/rDebug/rDebug.yy",},
     {"name":"inst_2523C732","path":"rooms/rDebug/rDebug.yy",},
     {"name":"inst_69B6E019","path":"rooms/rDebug/rDebug.yy",},
+    {"name":"inst_58A4325E","path":"rooms/rDebug/rDebug.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

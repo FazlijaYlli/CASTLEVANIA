@@ -1,2 +1,2 @@
-///@description IFRAMES
+///@description BEING HIT IFRAMES
 invincible = false;

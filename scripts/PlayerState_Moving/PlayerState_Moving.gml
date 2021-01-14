@@ -114,13 +114,21 @@ function PlayerState_Moving(){
 
 	y += vSpeed;	
 
+	//If the roll key is pressed during movement and touching the ground, roll.
+	if(move != 0 and place_meeting(x,y+1,oWall))
+	{
+		if(keyRoll)
+		{
+			state = PLAYERSTATE.ROLL;	
+		}
+	}
 	
 	//Going to crouch attack state if attack key is hit while crouching.
 	if (keyAttack and crouch and place_meeting(x,y+1,oWall))
 	{
 		state = PLAYERSTATE.CROUCH_ATTACK;
 	}
-	else if (keyAttack)//Attacking normally while standing.
+	else if (keyAttack) //Attacking normally while standing.
 	{
 		mask_index = sSimonIdle;
 		sprite_index = sSimonIdle;
