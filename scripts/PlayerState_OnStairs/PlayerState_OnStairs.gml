@@ -16,25 +16,34 @@
 		image_index = 0;
 		sprite_index = sSimonStairsAscend;
 		y -= 2;
+		//When player is in good position, put him in climbing stairs up state.
 		goingToStairsUp = false;
 		climbingStairsUp = true;
 	}
 	else if (climbingStairsUp)
 	{
 		move = -image_xscale;
+		//If the up key is pressed
 		if(keyUp)
 		{
+			//Go in the direction of the stairs xscale.
 			image_speed = 1;
 			image_xscale = -currentStair.image_xscale;
+			//Put the sprite.
 			if(sprite_index != sSimonStairsAscend)
 			{
 				sprite_index = sSimonStairsAscend;
 			}
+			
+			//Go at half speed in diagonal.
 			x += (wSpeed * 0.5) * move;
 			y -= (wSpeed * 0.5);
+			
+			//Check if there is another stair in front of him.
 			mask_index = sSimonStairsUpHB;
 			if(!place_meeting(x,y,oStairs))
 			{
+				//If not, go back to moving.
 				state = PLAYERSTATE.MOVING;
 				climbingStairsUp = false;
 			}
@@ -42,12 +51,13 @@
 		}
 		else if(keyCrouch)
 		{
+			//If we touch a wall below
 			if(place_meeting(x,y+(wSpeed*0.5),oWall))
 			{
-				state = PLAYERSTATE.MOVING;	
+				state = PLAYERSTATE.MOVING;
 				climbingStairsUp = false;
 			}
-			else
+			else //Go down in diagonal.
 			{
 				image_speed = 1;
 				image_xscale = currentStair.image_xscale;
@@ -63,7 +73,7 @@
 		{
 			state = PLAYERSTATE.STAIR_ATTACK;
 		}
-		else
+		else //If the player is not moving, stop sprite.
 		{
 			image_speed = 0;	
 			image_index = 0;
@@ -89,7 +99,7 @@
 		goingToStairsDown = false;
 		climbingStairsDown = true;
 	}
-	else if (climbingStairsDown)
+	else if (climbingStairsDown) //Almost the exact same code as climbingStairsUp, except for a few differences.
 	{
 		move = -image_xscale;
 		if(keyUp)

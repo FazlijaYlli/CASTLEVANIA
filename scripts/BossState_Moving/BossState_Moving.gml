@@ -2,11 +2,14 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 pour plus d’informations
 function BossState_Moving(){
 
+	//Choose a direction when the bossfights begins.
 	if(move = 0 and global.isBossMet)
 	{
 		move = choose(1, -1);
 	}
 
+	//Speed of the boss is determined by the number of hits he has taken.
+	//The augment in speed is linear.
 	wSpeed = wSpeedBase * (hitsTaken/3) + wSpeedBase;
 	
 	//Horizontal Movement 
@@ -44,6 +47,7 @@ function BossState_Moving(){
 	
 	y += vSpeed;
 
+	//Play his music.
 	if(global.isBossMet)
 	{
 		if(!audio_is_playing(musSkeletonLords))
@@ -53,6 +57,7 @@ function BossState_Moving(){
 		}
 	}
 	
+	//If the player dies, reset the global "isBossMet" variable.
 	with(oPlayer)
 	{
 		if(state = PLAYERSTATE.DEAD)
@@ -67,9 +72,29 @@ function BossState_Moving(){
 		move = -move;
 	}
 	
+	//If the player is in detection radius, get in chase state.
 	if(distance_to_object(oPlayer) < detectionRadius)
 	{
 		state = ENEMYSTATE.CHASE;
 	}
-
+	
+	//If the boss touches the player
+	if(place_meeting(x,y,oPlayer))
+	{
+		with(oPlayer)
+		{
+			if(state != PLAYERSTATE.DEAD)
+			{
+				global.isBossMet = true;	
+			}
+			
+			//If the player is not invincible and has more than 0 HP
+			//Put the player in hit state and withdraw HP.
+			if(!invincible and hp > 0)
+			{
+				state = PLAYERSTATE.HIT;
+				hp -= oBoss.damage;
+			}
+		}
+	}
 }

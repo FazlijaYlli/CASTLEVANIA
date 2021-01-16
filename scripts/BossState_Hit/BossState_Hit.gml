@@ -11,8 +11,10 @@ function BossState_Hit(){
 	}
 	else if (canBeHit)
 	{
+		//Withdraw HP.
 		hp -= oPlayer.damage;
 		hitsTaken += 1;
+		//Speed up the image speed
 		image_speed = 1 + (hitsTaken/2);
 		
 		if(!audio_is_playing(sndEnemyHit))
@@ -22,9 +24,12 @@ function BossState_Hit(){
 		
 		if(hp > 0)
 		{	
+			//Start the invincibility alarm, which is 0.3s.
 			alarm[0] = room_speed / 3;
 			canBeHit = false;
-			hSpeed += 5 * -sign(oPlayer.image_xscale);
+			
+			//Push back the boss in the opposite direction of the player.
+			hSpeed += 5 * -sign(oPlayer.image_xscale); 
 			vSpeed -= 2;
 		}
 	}		

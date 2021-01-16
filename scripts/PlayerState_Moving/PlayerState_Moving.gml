@@ -162,6 +162,7 @@ function PlayerState_Moving(){
 	//If the Interact key is pressed.
 	if(keyInteract)
 	{
+		//If in front a fog door and boss is not met.
 		if(!global.isBossMet)
 		{
 			mask_index = sSimonStairsUpHB;
@@ -173,6 +174,7 @@ function PlayerState_Moving(){
 			mask_index = sSimonIdle;
 		}
 		
+		//If is in front of a bonfire.
 		mask_index = sSimonStairsUpHB;
 		if(place_meeting(x,y,oBonfire) and place_meeting(x,y+1,oWall))
 		{

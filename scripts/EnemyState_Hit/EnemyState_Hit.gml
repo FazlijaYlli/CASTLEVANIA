@@ -1,11 +1,21 @@
 // Les actifs du script ont changé pour v2.3.0 Voir
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 pour plus d’informations
 function EnemyState_Hit(){
+	
+	
+	healthbar_show = true;
+	alarm[2] = room_speed*10;
+	
+	showDamage = true;
+	alarm[3] = room_speed*2;
+	
+	//Put the sprite in same direction as movement.
 	if (image_xscale != -move) 
 	{
 		image_xscale = -move;
 	}
 	
+	//If death, put in death state.
 	if (hp <= 0)
 	{
 		state = ENEMYSTATE.DEAD;
@@ -17,15 +27,20 @@ function EnemyState_Hit(){
 	
 	if(canBeHit)
 	{		
+		//Put invincibility alarm at third of a second.
 		alarm[0] = room_speed / 3;
 		
+		//Push enemy back a bit and play hit sound.
 		hSpeed += 5 * -sign(oPlayer.image_xscale);
 		vSpeed -= 2;
 		if(!audio_is_playing(sndEnemyHit))
 		{
 			audio_play_sound(sndEnemyHit,0,false);
 		}
+		
+		//Withdraw HP.
 		hp -= oPlayer.damage;
+		damageCombo += oPlayer.damage;
 		canBeHit = false;
 	}
 

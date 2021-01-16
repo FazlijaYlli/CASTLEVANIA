@@ -5,15 +5,18 @@ function PlayerState_Hit(){
 	//Vertical Movement 
 	vSpeed = vSpeed + gravForce;
 	
+	//Leave all stairs state.
 	goingToStairsUp = false;
 	climbingStairsUp = false;
 	goingToStairsDown = false;
 	climbingStairsDown = false;
 	
+	//Stops hSpeed if touched in the air.
 	if(!place_meeting(x,y+1,oWall) and canBeHit)
 	{
 		vSpeed = 0;	
 	}
+	
 	
 	if (hp <= 0)
 	{
@@ -31,6 +34,9 @@ function PlayerState_Hit(){
 		}
 		if(hp > 0)
 		{	
+			//Set two alarms
+			//First for going back to move state after a short time
+			//Second for the iframes of being hit.
 			alarm[0] = room_speed * 0.75;
 			alarm[1] = room_speed * 1.5;
 			canBeHit = false;

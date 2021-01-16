@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 pour plus d’informations
 function EnemyState_Moving(){
 	
+	//Set back the speed to 0.5;
 	wSpeed = 0.5;
 	image_speed = 1;
 	
@@ -55,10 +56,9 @@ function EnemyState_Moving(){
 		move = -move;
 	}
 	
+	//If the player is IN the detection radius go to chase state.
 	if(distance_to_object(oPlayer) < detectionRadius)
 	{
 		state = ENEMYSTATE.CHASE;
 	}
-	
-	
 }

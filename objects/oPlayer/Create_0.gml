@@ -3,6 +3,7 @@ hSpeed = 0;
 vSpeed = 0;
 wSpeed = 1;
 rollSpeed = 1.5;
+rollFrames = 25;
 jumpHeight = 4.5;
 gravForce = 0.25;
 hp = 500;

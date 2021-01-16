@@ -22,6 +22,7 @@
     {"id":{"name":"sSimonIdle","path":"sprites/sSimonIdle/sSimonIdle.yy",},"order":1,},
     {"id":{"name":"sndEnemyHit","path":"sounds/sndEnemyHit/sndEnemyHit.yy",},"order":2,},
     {"id":{"name":"sndItemGet","path":"sounds/sndItemGet/sndItemGet.yy",},"order":9,},
+    {"id":{"name":"fntDamage","path":"fonts/fntDamage/fntDamage.yy",},"order":5,},
     {"id":{"name":"sDoor","path":"sprites/sDoor/sDoor.yy",},"order":3,},
     {"id":{"name":"PlayerState_OnStairs","path":"scripts/PlayerState_OnStairs/PlayerState_OnStairs.yy",},"order":3,},
     {"id":{"name":"oDrop","path":"objects/oDrop/oDrop.yy",},"order":9,},

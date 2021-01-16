@@ -2,13 +2,14 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function BossState_Chase(){
 	
+	//If the player has died, go back to "moving" state.
 	with(oPlayer)
 	{
 		if(state = PLAYERSTATE.DEAD)
 		{
 			oBoss.state = ENEMYSTATE.MOVING;
 		}
-		else
+		else //If the boss is not facing the player, face it after "reactTime".
 		{
 			with(oBoss)
 			{
@@ -55,6 +56,7 @@ function BossState_Chase(){
 	
 	y += vSpeed;
 	
+	//If the boss touches the player
 	if(place_meeting(x,y,oPlayer))
 	{
 		with(oPlayer)
@@ -63,6 +65,9 @@ function BossState_Chase(){
 			{
 				global.isBossMet = true;	
 			}
+			
+			//If the player is not invincible and has more than 0 HP
+			//Put the player in hit state and withdraw HP.
 			if(!invincible and hp > 0)
 			{
 				state = PLAYERSTATE.HIT;

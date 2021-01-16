@@ -2,7 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function EnemyState_Chase(){
 	
-	if(alarm[1] == -1)
+	//If not facing the player, do it after "reactTime" frames.
+	if(alarm[1] == -1 and move != (oPlayer.x - x) and oPlayer.state = PLAYERSTATE.MOVING)
 	{
 		alarm[1] = reactTime;
 	}
@@ -55,8 +56,10 @@ function EnemyState_Chase(){
 		}
 	}
 	
+	//If the player is not in detection radius, go back to moving state.
 	if(distance_to_object(oPlayer) > detectionRadius)
 	{
 		state = ENEMYSTATE.MOVING;	
+		alarm[1] = -1;
 	}
 }

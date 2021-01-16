@@ -8,8 +8,8 @@ if(nearBonfire)
 	{
 		draw_set_font(fntMenu);
 		draw_set_halign(fa_center);
-		draw_sprite(sPrompt,0,window_get_width()/2,window_get_height()* 0.85);
-		draw_text(window_get_width()/2,window_get_height()*0.85-12,"E : Se reposer au feu");
+		draw_sprite(sPrompt,0,camera_get_view_width(0)/2,camera_get_view_height(0)* 0.85);
+		draw_text(camera_get_view_width(0)/2,camera_get_view_height(0)*0.85-12,"E : Se reposer au feu");
 	}
 }
 
@@ -17,8 +17,8 @@ if(nearFogdoor and !global.isBossMet)
 {
 	draw_set_font(fntMenu);
 	draw_set_halign(fa_center);
-	draw_sprite(sPrompt,0,window_get_width()/2,window_get_height()* 0.85);
-	draw_text(window_get_width()/2,window_get_height()*0.85-12,"E : Entrer dans le brouillard");
+	draw_sprite(sPrompt,0,camera_get_view_width(0)/2,camera_get_view_height(0)* 0.85);
+	draw_text(camera_get_view_width(0)/2,camera_get_view_height(0)*0.85-12,"E : Entrer dans le brouillard");
 }
 
 
