@@ -8,6 +8,7 @@ if(keyboard_check_pressed(vk_enter))
 			with(oPlayer)
 			{
 				state = PLAYERSTATE.MOVING;
+				invincible = false;
 			}
 			instance_destroy();
 		break;

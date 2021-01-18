@@ -2,6 +2,7 @@ function PlayerState_Bonfire(){
 	
 	//Setting Simon's sprite
 	sprite_index = sSimonCrouch;
+	invincible = true;
 	
 	if(!oBonfire.used)
 	{
@@ -16,7 +17,7 @@ function PlayerState_Bonfire(){
 	//Acivating the alarm that shows the menu two seconds after sitting.
 	if(alarm[3] == -1)
 	{
-		alarm[3] = 2*room_speed	
+		alarm[3] = room_speed	
 	}
 	
 	//Healing the player
@@ -30,13 +31,33 @@ function PlayerState_Bonfire(){
 		
 		if(alarm[3] >= 0)
 		{
-			hp += lostHp / (2*room_speed);
+			hp += lostHp / (room_speed);
 		}
 	}
 	else if (hp >= hpMax)
 	{
 		hp = hpMax;
 		isHealing = false;
+	}
+	
+	//Retoring stamina
+	if(stamina != staminaMax)
+	{
+		if (!isHealingStamina)
+		{
+			lostStamina = staminaMax - stamina;
+			isHealingStamina = true;
+		}
+		if(alarm[3] >= 0)
+		{
+			stamina += lostStamina / (room_speed);
+		}
+	}
+	else if (stamina >= staminaMax)
+	{
+		stamina = staminaMax;
+		isHealingStamina = false;
+		canUseStamina = true;
 	}
 	
 	//Playing the sound if the var "used" is false, so it doesn't play twice if the player

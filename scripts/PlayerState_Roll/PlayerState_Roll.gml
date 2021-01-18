@@ -2,6 +2,13 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerState_Roll(){
 	
+	//Stamina usage
+	if(canUseStamina and stamina > 0)
+	{
+		stamina -= rollStaminaCost;
+		canUseStamina = false;
+	}
+ 
 	//iFrames for the roll. 
 	if(alarm[4] == -1)
 	{

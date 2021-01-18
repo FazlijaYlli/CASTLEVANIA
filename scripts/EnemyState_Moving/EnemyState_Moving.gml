@@ -2,6 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 pour plus d’informations
 function EnemyState_Moving(){
 	
+	detectionRadius = baseDetectionRadius;
+	
 	//Set back the speed to 0.5;
 	wSpeed = 0.5;
 	image_speed = 1;

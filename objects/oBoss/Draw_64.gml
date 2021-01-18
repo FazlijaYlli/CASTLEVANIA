@@ -1,3 +1,5 @@
+
+/*
 draw_set_font(fntDebug);
 draw_set_halign(fa_left);
 switch(state)
@@ -16,6 +18,7 @@ draw_text(0,60,"BOSS_HIT_ALARM : " + string(alarm[0]));
 draw_text(0,75,"BOSS_DEATH_ALARM : " + string(alarm[1]));
 draw_text(0,90,"BOSS_HP : " + string(hp));
 draw_text(0,120,"IS_BOSS_MET : " + string(global.isBossMet));
+*/
 
 //Boss Health Bar
 if(global.isBossMet)

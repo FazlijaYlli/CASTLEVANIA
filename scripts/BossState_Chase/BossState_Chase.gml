@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function BossState_Chase(){
 	
+
 	//If the player has died, go back to "moving" state.
 	with(oPlayer)
 	{
@@ -13,9 +14,17 @@ function BossState_Chase(){
 		{
 			with(oBoss)
 			{
-				if(move != sign(oPlayer.x - x) and alarm[2] == -1)
+				//If not facing the player, do it after "reactTime" frames.
+				if(move == sign(oPlayer.x - x))
 				{
-					alarm[2] = reactTime;
+					alarm[2] = reactTime;	
+				}
+				else
+				{
+					if(alarm[1] == -1)
+					{
+						alarm[1] = reactTime;	
+					}
 				}
 			}
 		}

@@ -52,6 +52,12 @@ function PlayerState_Attack(){
 		audioCanPlay = false;
 	}
 	
+	if(place_meeting(x,y,oCandle))
+	{
+		candleHit = instance_place(x,y,oCandle);
+		instance_destroy(candleHit);
+	}
+	
 	//If we touched anything
 	if (hits > 0)
 	{

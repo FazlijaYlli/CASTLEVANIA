@@ -2,10 +2,21 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function EnemyState_Chase(){
 	
+	detectionRadius = baseDetectionRadius * 1.5;
+	
 	//If not facing the player, do it after "reactTime" frames.
-	if(alarm[1] == -1 and move != (oPlayer.x - x) and oPlayer.state = PLAYERSTATE.MOVING)
+	if(move == sign(oPlayer.x - x))
 	{
-		alarm[1] = reactTime;
+		alarm[1] = reactTime;	
+		wSpeed = 1;
+		image_speed = 2;
+	}
+	else
+	{
+		if(alarm[1] == -1)
+		{
+			alarm[1] = reactTime;	
+		}
 	}
 	
 	//Horizontal Movement 
@@ -18,6 +29,7 @@ function EnemyState_Chase(){
 	{
 		image_xscale = -move;
 	}
+
 	
 	//Horizontal Collisions
 	if (place_meeting(x+hSpeed,y,oWall)) 
@@ -27,6 +39,16 @@ function EnemyState_Chase(){
 			x += sign(hSpeed);
 		}
 		hSpeed = 0;
+		//If the wall in front is not too tall, jump.
+		if(place_meeting(x,y+1,oWall))
+		{
+			mask_index = sEnemyWallDetectionHB;
+			if(!place_meeting(x,y,oWall))
+			{
+				vSpeed = -jumpHeight;
+			}
+			mask_index = sEnemyidle;
+		}
 	}
 
 	x += hSpeed;

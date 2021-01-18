@@ -4,6 +4,13 @@ function PlayerState_Moving(){
 	//move will equal 1 with going to the right, -1 going to the left and 0 if standing still or rpessing both directions.
 	move = keyRight - keyLeft;
 	
+	//Stamina regen
+	if(canRegenStamina and stamina < staminaMax)
+	{
+		canUseStamina = true;
+		stamina += staminaRegen;
+	}
+	
 	with(oBonfire)
 	{
 		used = false;	
@@ -42,16 +49,32 @@ function PlayerState_Moving(){
 		//If touching the ground.
 		if (place_meeting(x,y+1,oWall)) 
 		{
+			if(move != 0)
+			{
+				//If the sprint key or roll key is pressed, do it.
+				if(keyRoll and stamina > 0)
+				{
+					state = PLAYERSTATE.ROLL;	
+				}
+				
+				if(keySprint and stamina > 0)
+				{
+					state = PLAYERSTATE.SPRINT;	
+				}	
+			}
+			
 			//If the jump key is pressed, jump.
 			if(keyJump)
 			{
 				vSpeed = -jumpHeight;
 			}
+			
 			//If going in either direction, apply the walk sprite.
 			if(move != 0 and sprite_index != sSimonWalk)
 			{
 				sprite_index = sSimonWalk;	
 			}
+			
 			//If there are stairs, go up on them.
 			if(keyUp)
 			{
@@ -114,25 +137,24 @@ function PlayerState_Moving(){
 
 	y += vSpeed;	
 
-	//If the roll key is pressed during movement and touching the ground, roll.
-	if(move != 0 and place_meeting(x,y+1,oWall))
+
+	if(canUseStamina and stamina > 0)
 	{
-		if(keyRoll)
+		//Going to crouch attack state if attack key is hit while crouching.
+		if (keyAttack and crouch and place_meeting(x,y+1,oWall))
 		{
-			state = PLAYERSTATE.ROLL;	
+			state = PLAYERSTATE.CROUCH_ATTACK;
+			canUseStamina = false;
+			stamina -= attackStaminaCost;
 		}
-	}
-	
-	//Going to crouch attack state if attack key is hit while crouching.
-	if (keyAttack and crouch and place_meeting(x,y+1,oWall))
-	{
-		state = PLAYERSTATE.CROUCH_ATTACK;
-	}
-	else if (keyAttack) //Attacking normally while standing.
-	{
-		mask_index = sSimonIdle;
-		sprite_index = sSimonIdle;
-		state = PLAYERSTATE.ATTACK;
+		else if (keyAttack) //Attacking normally while standing.
+		{
+			mask_index = sSimonIdle;
+			sprite_index = sSimonIdle;
+			state = PLAYERSTATE.ATTACK;
+			canUseStamina = false;
+			stamina -= attackStaminaCost;
+		}
 	}
 	
 	//Testing if player is near a bonfire.

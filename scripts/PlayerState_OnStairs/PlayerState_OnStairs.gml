@@ -1,4 +1,12 @@
  function PlayerState_OnStairs(){
+	
+	//Stamina regen
+	if(canRegenStamina and stamina < staminaMax)
+	{
+		canUseStamina = true;
+		stamina += staminaRegen;
+	}
+	 
 	if(goingToStairsUp)
 	{
 		//Where the player should end up after the movement.

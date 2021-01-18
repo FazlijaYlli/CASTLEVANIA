@@ -1,7 +1,14 @@
+
+//DRAW HEALTHBAR
 draw_sprite_stretched(sHealthBarBg,0,healthbar_x, healthbar_y,healthbar_width,healthbar_height);
 draw_sprite_stretched(sHealthBar,0,healthbar_x,healthbar_y,min((hp/hpMax * healthbar_width), healthbar_width), healthbar_height)
-draw_sprite_stretched(sHealthBarBorder,0,healthbar_x, healthbar_y,healthbar_width,healthbar_height);
+//draw_sprite_stretched(sHealthBarBorder,0,healthbar_x, healthbar_y,healthbar_width,healthbar_height);
 
+draw_sprite_stretched(sHealthBarBg,0,staminabar_x, staminabar_y,staminabar_width,staminabar_height);
+draw_sprite_stretched(sStaminaBar,0,staminabar_x,staminabar_y,min((stamina/staminaMax * staminabar_width), staminabar_width), staminabar_height)
+//draw_sprite_stretched(sHealthBarBorder,0,staminabar_x, staminabar_y,staminabar_width,staminabar_height);
+
+//DRAW PROMPTS
 if(nearBonfire)
 {
 	if(!oBonfire.used)
@@ -25,6 +32,8 @@ if(nearFogdoor and !global.isBossMet)
 ////////////////////////////////////////////
 /////////////////DEBUG//////////////////////
 ////////////////////////////////////////////
+
+/*
 
 draw_set_font(fntDebug);
 draw_set_halign(fa_left);
@@ -64,6 +73,9 @@ switch(state)
 
 draw_text(0,105,"INVINCIBLE: "+ string(invincible));
 draw_text(0,135,"HP: "+ string(hp));
+draw_text(0,190,"STAMINA: "+ string(stamina));
+
+*/
 
 ////////////////////////////////////////////
 /////////////////DEBUG//////////////////////

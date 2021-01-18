@@ -24,6 +24,11 @@ function PlayerState_StairAttack(){
 		mask_index = sSimonStairsDescendAttackHB;	
 	}
 	
+	if(canUseStamina and stamina > 0)
+	{
+		stamina -= attackStaminaCost;
+		canUseStamina = false;
+	}
 	
 	image_speed = 1;
 	ds_list_clear(hitList);
@@ -35,6 +40,12 @@ function PlayerState_StairAttack(){
 	{
 		audio_play_sound(sndWhip,0,false);
 		audioCanPlay = false;
+	}
+	
+	if(place_meeting(x,y,oCandle))
+	{
+		candleHit = instance_place(x,y,oCandle);
+		instance_destroy(candleHit);
 	}
 		
 	//If we touched anything

@@ -7,6 +7,21 @@ keyCrouch = keyboard_check(vk_down);
 keyAttack = keyboard_check_pressed(ord("F"));
 keyInteract = keyboard_check_pressed(ord("E"));
 keyRoll = keyboard_check_pressed(vk_control);
+keySprint = keyboard_check(vk_shift);
+
+//HEALTH CONTROL
+if(hp > hpMax)
+{
+	hp = hpMax;	
+}
+
+//STAMINA CONTROL
+if(state != PLAYERSTATE.BONFIRE and stamina <= 0 and alarm[5] == -1)
+{
+	canRegenStamina = false;
+	stamina = 0;
+	alarm[5] = room_speed*2;
+}
 
 camera_set_view_pos(camera,x-camera_get_view_width(camera)/2,camera_get_view_y(camera));
 
@@ -41,5 +56,8 @@ switch (state)
 	break;
 	case PLAYERSTATE.ROLL:
 		PlayerState_Roll();
+	break;
+	case PLAYERSTATE.SPRINT:
+		PlayerState_Sprint();
 	break;
 }

@@ -1,14 +1,16 @@
 randomize();
 move = choose(1, -1);
-hp = 200;
+hp = 125;
 hpMax = hp;
 reactTime = 60;
-damage = 75;
+damage = 150;
 hSpeed = 0;
 vSpeed = 0;
 wSpeed = 0.5;
+jumpHeight = 4;
 gravForce = 0.5;
-detectionRadius = 64;
+baseDetectionRadius = 64;
+detectionRadius = baseDetectionRadius;
 state = ENEMYSTATE.MOVING;
 canBeHit = true;
 

@@ -1,8 +1,8 @@
 randomize();
 move = 0;
-hp = 750;
+hp = 600;
 hpMax = hp;
-damage = 120;
+damage = 200;
 detectionRadius = 90;
 reactTime = 45;
 hSpeed = 0;

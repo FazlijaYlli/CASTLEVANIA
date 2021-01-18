@@ -25,24 +25,7 @@ function EnemyState_Hit(){
 		}
 	}
 	
-	if(canBeHit)
-	{		
-		//Put invincibility alarm at third of a second.
-		alarm[0] = room_speed / 3;
-		
-		//Push enemy back a bit and play hit sound.
-		hSpeed += 5 * -sign(oPlayer.image_xscale);
-		vSpeed -= 2;
-		if(!audio_is_playing(sndEnemyHit))
-		{
-			audio_play_sound(sndEnemyHit,0,false);
-		}
-		
-		//Withdraw HP.
-		hp -= oPlayer.damage;
-		damageCombo += oPlayer.damage;
-		canBeHit = false;
-	}
+
 
 	#region Mouvement & Collisions
 	
@@ -74,6 +57,28 @@ function EnemyState_Hit(){
 	
 	#endregion Mouvement & Collisions
 	
-	x += hSpeed
+		if(canBeHit)
+	{		
+		//Put invincibility alarm at third of a second.
+		alarm[0] = room_speed / 3;
+		
+		//Push enemy back a bit and play hit sound.
+		if(!audio_is_playing(sndEnemyHit))
+		{
+			audio_play_sound(sndEnemyHit,0,false);
+		}
+		
+		//Withdraw HP.
+		hp -= oPlayer.damage;
+		damageCombo += oPlayer.damage;
+		canBeHit = false;
+	}
+	
+	if(alarm[0] != -1)
+	{
+		hSpeed *= 0.5;
+	}
+	
+	x += hSpeed;
 	y += vSpeed;
 }

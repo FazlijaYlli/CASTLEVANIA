@@ -7,6 +7,13 @@ function PlayerState_CrouchAttack(){
 		ds_list_clear(hitList);
 	}
 	
+	if(canUseStamina and stamina > 0)
+	{
+		stamina -= attackStaminaCost;
+		canUseStamina = false;
+	}
+	
+	
 	//Attack Hitbox & Hit Registering
 	mask_index = sSimonAttackHB;
 	var frameHits = ds_list_create();
@@ -16,6 +23,12 @@ function PlayerState_CrouchAttack(){
 	{
 		audio_play_sound(sndWhip,0,false);
 		audioCanPlay = false;
+	}
+	
+	if(place_meeting(x,y,oCandle))
+	{
+		candleHit = instance_place(x,y,oCandle);
+		instance_destroy(candleHit);
 	}
 	
 	//If we touched anything
