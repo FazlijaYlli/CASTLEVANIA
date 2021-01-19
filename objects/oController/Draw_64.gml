@@ -11,7 +11,8 @@ if(oPlayer.dead)
 
 if(!instance_exists(oBoss))
 {
-	ShowTitle("YOU DEFEATED", 255,180,0);
+	ShowTitle("YOU SHITTED", 255,180,0);
+	ShowTitle("AND CUM", 255,180,0);
 }
 
 

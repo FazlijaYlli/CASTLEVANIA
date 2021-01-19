@@ -1,11 +1,11 @@
 randomize();
 move = 0;
-hp = 200;
+hp = 800;
 hpMax = hp;
 damage = 200;
 detectionRadius = 90;
 reactTime = 45;
-soulValue = 78500;
+soulValue = 1;
 hSpeed = 0;
 vSpeed = 0;
 wSpeedBase = 0.2;
