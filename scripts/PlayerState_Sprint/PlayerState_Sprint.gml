@@ -1,6 +1,6 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerState_Sprint(){
-	if(keyboard_check(vk_shift))
+	if(keyboard_check(vk_shift) and stamina > 0)
 	{
 		//Horizontal Movement
 		hSpeed = move * sprintSpeed;
