@@ -1,6 +1,11 @@
 // Les actifs du script ont changé pour v2.3.0 Voir
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 pour plus d’informations
 function BossState_Hit(){
+	
+	showDamage = true;
+	alarm[3] = room_speed*2;	
+	
+	
 	if (hp <= 0)
 	{
 		state = ENEMYSTATE.DEAD;
@@ -13,6 +18,7 @@ function BossState_Hit(){
 	{
 		//Withdraw HP.
 		hp -= oPlayer.damage;
+		damageCombo += oPlayer.damage;
 		hitsTaken += 1;
 		//Speed up the image speed
 		image_speed = 1 + (hitsTaken/2);

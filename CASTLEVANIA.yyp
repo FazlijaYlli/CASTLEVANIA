@@ -77,6 +77,7 @@
     {"id":{"name":"sSimonStairsDescendAttack","path":"sprites/sSimonStairsDescendAttack/sSimonStairsDescendAttack.yy",},"order":10,},
     {"id":{"name":"sndDead","path":"sounds/sndDead/sndDead.yy",},"order":5,},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},"order":0,},
+    {"id":{"name":"sndFogDoor","path":"sounds/sndFogDoor/sndFogDoor.yy",},"order":13,},
     {"id":{"name":"sSimonCrouch","path":"sprites/sSimonCrouch/sSimonCrouch.yy",},"order":5,},
     {"id":{"name":"sSimonCrouchAttack","path":"sprites/sSimonCrouchAttack/sSimonCrouchAttack.yy",},"order":6,},
     {"id":{"name":"BossState_Dead","path":"scripts/BossState_Dead/BossState_Dead.yy",},"order":0,},

@@ -2,8 +2,10 @@
 draw_set_halign(fa_left);
 draw_text(0,150,"DEATH_ALARM : "+ string(alarm[0]));
 draw_text(0,165,"FADE: "+ string(fade));
-draw_set_font(fntDeath);
 */
+
+
+draw_set_font(fntDeath);
 
 if(alarm[0] <= room_speed*5 and alarm[0] > room_speed*4)
 {

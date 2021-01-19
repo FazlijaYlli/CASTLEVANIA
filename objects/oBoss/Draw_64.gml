@@ -23,9 +23,17 @@ draw_text(0,120,"IS_BOSS_MET : " + string(global.isBossMet));
 //Boss Health Bar
 if(global.isBossMet)
 {
-	draw_set_font(fntBoss)
-	draw_text(healthbar_x,healthbar_y - 35,"Squelette Rouge de Carthus");
-	draw_sprite(sHealthBarBg,0,healthbar_x, healthbar_y);
+	draw_set_halign(fa_left);
+	draw_set_font(fntBoss);
+	draw_text(healthbar_x,healthbar_y - 25,"Squelette Rouge de Carthus");
+	draw_sprite_stretched(sHealthBarBg,0,healthbar_x-6, healthbar_y,healthbar_width + 12, healthbar_height);
 	draw_sprite_stretched(sHealthBar,0,healthbar_x,healthbar_y,min((hp/hpMax * healthbar_width), healthbar_width), healthbar_height)
-	draw_sprite(sHealthBarBorder,0,healthbar_x, healthbar_y);
+	draw_sprite_stretched(sHealthBarBorder,0,healthbar_x-6, healthbar_y,healthbar_width + 12, healthbar_height);
+}
+
+if(showDamage)
+{
+	draw_set_font(fntBoss)
+	draw_set_halign(fa_right)
+	draw_text(healthbar_x + healthbar_width, healthbar_y - 35,damageCombo);
 }
