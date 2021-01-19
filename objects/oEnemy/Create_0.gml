@@ -2,6 +2,7 @@ randomize();
 move = choose(1, -1);
 hp = 125;
 hpMax = hp;
+soulValue = 1350;
 reactTime = 60;
 damage = 150;
 hSpeed = 0;

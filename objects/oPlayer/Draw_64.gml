@@ -9,6 +9,15 @@ draw_sprite_stretched(sStaminaBar,0,staminabar_x,staminabar_y,min((stamina/stami
 //draw_sprite_stretched(sHealthBarBorder,0,staminabar_x, staminabar_y,staminabar_width,staminabar_height);
 
 //DRAW PROMPTS
+draw_set_font(fntMenu);
+draw_sprite_stretched(sSoulCntr,0,soulcntr_x,soulcntr_y,soulcntr_width,soulcntr_height);
+draw_set_halign(fa_right);
+draw_set_valign(fa_middle);
+draw_text(soulcntr_x + (soulcntr_width * 0.9),soulcntr_y + (soulcntr_height * 0.5) + 2,string(soulCount));
+draw_set_halign(fa_center);
+draw_set_valign(fa_top);
+
+
 if(nearBonfire)
 {
 	if(!oBonfire.used)

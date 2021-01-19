@@ -4,23 +4,45 @@ function BossState_Dead(){
 	//Setting up the death cinematic to 3 seconds.
 	if(alarm[1] == -1)
 	{
-		alarm[1] = room_speed * 3;
-		sprite_index = sBossIdle;
+		if(giveSouls)
+		{
+			if(instance_exists(oPlayer))
+			{
+				AddToSouls(soulValue, self);	
+			}
+		}
+		else
+		{
+			alarm[1] = room_speed * 3;
+			sprite_index = sBossIdle;
+		}
 	}
 	else //While the alarm is ticking down
 	{
-		if(alarm[1] == 0) //If the alarm finished ticking down
-		{
-			alarm[1] = -1;
-			global.isBossMet = false;
-			instance_destroy(); //Destroy the boss instance.
-		}
-		else if (alarm[1] % 10 == 0) //Every tenth of a second
+		if (alarm[1] % 20 == 0) //Every fifth of a second
 		{
 			//Create an effect at a random coordinates on the boss sprite.
 			instance_create_layer(x+irandom_range(-sprite_get_width(sEnemyidle),sprite_get_width(sEnemyidle)),y+irandom_range(-sprite_get_height(sEnemyidle),sprite_get_height(sEnemyidle)),"Level",oHitEffect);
 			audio_play_sound(sndEnemyDeath,0,false);
 			randomize();
+		}
+		if (alarm[1] == 60)
+		{
+			audio_play_sound(sndBossDeath,0,false);	
+		}
+		if (alarm[1] < 60)
+		{
+			if(alarm[1] % 10 == 0)
+			{
+				instance_create_layer(x+irandom_range(-sprite_get_width(sEnemyidle),sprite_get_width(sEnemyidle)),y+irandom_range(-sprite_get_height(sEnemyidle),sprite_get_height(sEnemyidle)),"Level",oHitEffect);
+				audio_play_sound(sndEnemyDeath,0,false);
+				randomize();
+			}
+		}
+		if (alarm[1] == 0)
+		{
+			global.isBossMet = false;
+			giveSouls = true;
 		}
 	}
 }

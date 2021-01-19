@@ -1,3 +1,6 @@
+healthbar_x = (global.width / 2) - (healthbar_width / 2);
+healthbar_y = global.height * 0.9;
+
 switch (state)
 {
 	case ENEMYSTATE.MOVING: 

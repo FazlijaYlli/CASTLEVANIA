@@ -1,10 +1,11 @@
 randomize();
 move = 0;
-hp = 800;
+hp = 200;
 hpMax = hp;
 damage = 200;
 detectionRadius = 90;
 reactTime = 45;
+soulValue = 78500;
 hSpeed = 0;
 vSpeed = 0;
 wSpeedBase = 0.2;
@@ -14,14 +15,16 @@ state = ENEMYSTATE.MOVING;
 canBeHit = true;
 hitsTaken = 1;
 showDamage = false;
+giveSouls = false;
 damageCombo = 0;
 global.isBossMet = false;
 
 healthbar_width = 600;
 healthbar_height = 35;
-healthbar_x = (window_get_width() / 2) - (healthbar_width / 2);
-healthbar_y = (window_get_height() - 50) - (healthbar_height / 4);
-
+//healthbar_x = (camera_get_view_width(view_camera[0]) / 2) - (healthbar_width / 2);
+healthbar_x = global.width;
+healthbar_y = global.height;
+//healthbar_y = (camera_get_view_height(view_camera[0])) - (healthbar_height / 4);
 
 //If the death animation has been chosen
 sprite_index = sBossWalking;

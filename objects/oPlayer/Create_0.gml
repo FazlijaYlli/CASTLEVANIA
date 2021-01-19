@@ -19,19 +19,26 @@ canUseStamina = true;
 damage = 50;
 lostHp = 0;
 lostStamina = 0;
+soulCount = 0;
 
 //GUI
 //HEALTHBAR
 healthbar_width = 300;
 healthbar_height = 20;
-healthbar_x = (window_get_width() * 0.05);
-healthbar_y = (window_get_height() * 0.05) - (healthbar_height / 4);
+healthbar_x = 0;
+healthbar_y = 0;
 
 //STAMINABAR
 staminabar_width = 300;
 staminabar_height = 20;
-staminabar_x = (window_get_width() * 0.05);
-staminabar_y = ((window_get_height() * 0.05) - (healthbar_height / 4)) + healthbar_height + 3;
+staminabar_x = 0;
+staminabar_y = 0;
+
+//SOULCOUNT
+soulcntr_width = 128;
+soulcntr_height = 48;
+soulcntr_x = 0;
+soulcntr_y = 0;
 
 //STATES
 canBeHit = true;

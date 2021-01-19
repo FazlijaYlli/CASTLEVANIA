@@ -9,6 +9,16 @@ keyInteract = keyboard_check_pressed(ord("E"));
 keyRoll = keyboard_check_pressed(vk_control);
 keySprint = keyboard_check(vk_shift);
 
+//GUI COORDINATES
+healthbar_x =  global.width * 0.05;
+healthbar_y =  global.height * 0.025;
+
+staminabar_x = global.width * 0.05;
+staminabar_y = global.height * 0.065;
+
+soulcntr_x = global.width * 0.8;
+soulcntr_y = global.height * 0.025;
+
 //HEALTH CONTROL
 if(hp > hpMax)
 {
