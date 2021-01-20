@@ -14,6 +14,7 @@ function BossState_Hit(){
 			audio_play_sound(sndEnemyDeath,0,false);
 		}
 	}
+	
 	else if (canBeHit)
 	{
 		//Withdraw HP.
@@ -31,7 +32,7 @@ function BossState_Hit(){
 		if(hp > 0)
 		{	
 			//Start the invincibility alarm, which is 0.3s.
-			alarm[0] = room_speed / 3;
+			alarm[0] = room_speed / 6;
 			canBeHit = false;
 			
 			//Push back the boss in the opposite direction of the player.

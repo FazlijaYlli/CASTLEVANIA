@@ -1,14 +1,21 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerState_Sprint(){
-	if(keyboard_check(vk_shift) and stamina > 0)
+	if(keySprint and stamina > 0 )
 	{
-		//Horizontal Movement
-		hSpeed = move * sprintSpeed;
-		//Vertical Movement
-		vSpeed = vSpeed + gravForce;
+		if(keyRight or keyLeft)
+		{
+			//Horizontal Movement
+			hSpeed = move * sprintSpeed;
+			//Vertical Movement
+			vSpeed = vSpeed + gravForce;
 		
-		image_speed = 2;
-		stamina -= 0.5;
+			image_speed = 2;
+			stamina -= 0.5;
+		}
+		else
+		{
+			state = PLAYERSTATE.MOVING;	
+		}
 	
 		//Horizontal Collisions
 		if (place_meeting(x+hSpeed,y,oWall)) 

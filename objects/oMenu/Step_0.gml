@@ -13,9 +13,16 @@ if(keyboard_check_pressed(vk_enter))
 			instance_destroy();
 		break;
 		case 1:
-			room_restart();			
+			if(oPlayer.soulCount >= 1000)
+			{
+				oPlayer.soulCount -= 1000;
+				oPlayer.damage += 150;
+			}
 		break;
 		case 2:
+			room_restart();			
+		break;
+		case 3:
 			game_end();
 		break;
 	}

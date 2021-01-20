@@ -1,6 +1,6 @@
 {
   "compression": 0,
-  "volume": 0.6,
+  "volume": 0.4,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "sndBossDeath.mp3",
-  "duration": 13.205,
+  "soundFile": "sndSoulGet.mp3",
+  "duration": 1.93805,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sndBossDeath",
+  "name": "sndSoulGet",
   "tags": [],
   "resourceType": "GMSound",
 }

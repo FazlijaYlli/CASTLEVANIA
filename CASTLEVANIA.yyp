@@ -8,6 +8,8 @@
     {"id":{"name":"sHealthBar","path":"sprites/sHealthBar/sHealthBar.yy",},"order":0,},
     {"id":{"name":"BossState_Chase","path":"scripts/BossState_Chase/BossState_Chase.yy",},"order":3,},
     {"id":{"name":"fntTitle","path":"fonts/fntTitle/fntTitle.yy",},"order":4,},
+    {"id":{"name":"sndBurning","path":"sounds/sndBurning/sndBurning.yy",},"order":15,},
+    {"id":{"name":"sndSoulGet","path":"sounds/sndSoulGet/sndSoulGet.yy",},"order":16,},
     {"id":{"name":"sBackgroundBricks","path":"sprites/sBackgroundBricks/sBackgroundBricks.yy",},"order":0,},
     {"id":{"name":"EnemyState_Hit","path":"scripts/EnemyState_Hit/EnemyState_Hit.yy",},"order":2,},
     {"id":{"name":"oController","path":"objects/oController/oController.yy",},"order":4,},

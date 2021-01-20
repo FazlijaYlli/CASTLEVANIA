@@ -1,11 +1,11 @@
 randomize();
 move = 0;
-hp = 800;
+hp = 2000;
 hpMax = hp;
 damage = 200;
 detectionRadius = 90;
 reactTime = 45;
-soulValue = 1;
+soulValue = 150000;
 hSpeed = 0;
 vSpeed = 0;
 wSpeedBase = 0.2;
@@ -15,7 +15,6 @@ state = ENEMYSTATE.MOVING;
 canBeHit = true;
 hitsTaken = 1;
 showDamage = false;
-giveSouls = false;
 damageCombo = 0;
 global.isBossMet = false;
 

@@ -48,3 +48,8 @@ if(keyboard_check_pressed(vk_f11))
 	}
 }
 
+if(global.soulsToAdd > 0)
+{
+	global.showSoulsAdded = true;
+	AddToSouls(global.soulsToAdd);
+}

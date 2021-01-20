@@ -14,6 +14,10 @@ draw_sprite_stretched(sSoulCntr,0,soulcntr_x,soulcntr_y,soulcntr_width,soulcntr_
 draw_set_halign(fa_right);
 draw_set_valign(fa_middle);
 draw_text(soulcntr_x + (soulcntr_width * 0.9),soulcntr_y + (soulcntr_height * 0.5) + 2,string(soulCount));
+if(global.showSoulsAdded)
+{
+	draw_text(soulcntr_x + (soulcntr_width * 0.9),soulcntr_y + (soulcntr_height * 1.5),"+ "+string(global.soulsToAdd));	
+}
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 
