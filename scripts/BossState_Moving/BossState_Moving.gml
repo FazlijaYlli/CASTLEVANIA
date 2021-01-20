@@ -10,7 +10,7 @@ function BossState_Moving(){
 
 	//Speed of the boss is determined by the number of hits he has taken.
 	//The augment in speed is linear.
-	wSpeed = wSpeedBase * (hitsTaken/3) + wSpeedBase;
+	wSpeed = wSpeedBase * (hitsTaken/4) + wSpeedBase;
 	
 	//Horizontal Movement 
 	hSpeed = move * wSpeed;

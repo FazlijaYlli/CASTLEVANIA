@@ -15,4 +15,7 @@ switch (state)
 	case ENEMYSTATE.CHASE: 
 		BossState_Chase();
 	break;
+	case ENEMYSTATE.CHARGE:
+		BossState_Charge();
+	break;
 }

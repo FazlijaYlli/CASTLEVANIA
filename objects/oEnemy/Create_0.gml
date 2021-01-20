@@ -32,4 +32,5 @@ enum ENEMYSTATE
 	HIT,
 	DEAD,
 	CHASE,
+	CHARGE,
 }

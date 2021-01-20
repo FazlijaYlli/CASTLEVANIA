@@ -1,8 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function BossState_Chase(){
+	image_speed = 1 + (hitsTaken/2);
 	
-
 	//If the player has died, go back to "moving" state.
 	with(oPlayer)
 	{
@@ -27,6 +27,14 @@ function BossState_Chase(){
 					}
 				}
 			}
+		}
+	}
+	
+	if(distance_to_object(oPlayer) >= 30 and distance_to_object(oPlayer) <= 150) 
+	{
+		if(irandom_range(0, (distance_to_object(oPlayer) + 150)) == 1)
+		{
+			state = ENEMYSTATE.CHARGE;
 		}
 	}
 	

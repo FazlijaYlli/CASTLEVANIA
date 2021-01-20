@@ -2,7 +2,15 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 pour plus d’informations
 function BossState_Hit(){
 	
+	//Horizontal Movement 
+	//hSpeed = move * wSpeed;
+	//Vertical Movement 
+	vSpeed = vSpeed + gravForce;
+	
+	
 	showDamage = true;
+	
+	//Set the time when the damage dissappear.
 	alarm[3] = room_speed*2;	
 	
 	
@@ -21,8 +29,6 @@ function BossState_Hit(){
 		hp -= oPlayer.damage;
 		damageCombo += oPlayer.damage;
 		hitsTaken += 1;
-		//Speed up the image speed
-		image_speed = 1 + (hitsTaken/2);
 		
 		if(!audio_is_playing(sndEnemyHit))
 		{
@@ -34,19 +40,8 @@ function BossState_Hit(){
 			//Start the invincibility alarm, which is 0.3s.
 			alarm[0] = room_speed / 6;
 			canBeHit = false;
-			
-			//Push back the boss in the opposite direction of the player.
-			hSpeed += 5 * -sign(oPlayer.image_xscale); 
-			vSpeed -= 2;
 		}
 	}		
-
-	#region Mouvement & Collisions
-	//Horizontal Movement 
-	hSpeed = move * wSpeed;
-	//Vertical Movement 
-	vSpeed = vSpeed + gravForce;
-	
 	
 	//Horizontal Collisions
 	if (place_meeting(x+hSpeed,y,oWall)) 
@@ -73,7 +68,6 @@ function BossState_Hit(){
 		image_xscale = -move * 2;
 	}
 	
-	#endregion Mouvement & Collisions
 
 	x += hSpeed
 	y += vSpeed;

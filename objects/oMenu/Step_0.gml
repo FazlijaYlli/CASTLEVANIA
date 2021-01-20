@@ -16,7 +16,7 @@ if(keyboard_check_pressed(vk_enter))
 			if(oPlayer.soulCount >= 1000)
 			{
 				oPlayer.soulCount -= 1000;
-				oPlayer.damage += 150;
+				oPlayer.damage += 50;
 			}
 		break;
 		case 2:
