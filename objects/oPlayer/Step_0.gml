@@ -33,7 +33,6 @@ if(state != PLAYERSTATE.BONFIRE and stamina <= 0 and alarm[5] == -1)
 	alarm[5] = room_speed*1;
 }
 
-camera_set_view_pos(camera,x-camera_get_view_width(camera)/2,camera_get_view_y(camera));
 
 switch (state)
 {

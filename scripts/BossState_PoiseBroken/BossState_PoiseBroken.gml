@@ -5,7 +5,11 @@ function BossState_PoiseBroken(){
 	if(alarm[7] == -1)
 	{
 		alarm[7] = room_speed*3;
-	}
+		if(!audio_is_playing(sndParry))
+		{
+			audio_play_sound(sndParry,0,false);	
+		}
+    }
 	if(oPlayer.state == PLAYERSTATE.RIPOSTE and alarm[7] > 0)
 	{
 		if(oPlayer.riposte)
@@ -40,5 +44,9 @@ function BossState_PoiseBroken(){
 		poiseBroken = false;
 		canBeHit = true;
 		state = ENEMYSTATE.MOVING;
+	}
+	else
+	{
+		x += -move * 0.05;	
 	}
 }

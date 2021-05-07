@@ -1,4 +1,8 @@
+/////////////
+/// DEBUG ///
+/////////////
 
+/*
 draw_set_font(fntDebug);
 draw_set_halign(fa_left);
 switch(state)
@@ -29,6 +33,8 @@ switch(state)
 draw_text(0,105,"ALARM POISE_BROKEN: "+ string(alarm[7]));
 draw_text(0,135,"CAN_BE_HIT: "+ string(canBeHit));
 draw_text(0,150,"POISE_BROKEN: "+ string(poiseBroken));
+
+*/
 
 //Boss Health Bar
 if(global.isBossMet)

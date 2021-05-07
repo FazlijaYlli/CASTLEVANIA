@@ -1,4 +1,5 @@
 
+
 //DRAW HEALTHBAR
 draw_sprite_stretched(sHealthBarBg,0,healthbar_x, healthbar_y,healthbar_width,healthbar_height);
 draw_sprite_stretched(sHealthBar,0,healthbar_x,healthbar_y,min((hp/hpMax * healthbar_width), healthbar_width), healthbar_height)
@@ -21,7 +22,6 @@ if(global.showSoulsAdded)
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 
-
 if(nearBonfire)
 {
 	if(!oBonfire.used)
@@ -41,7 +41,11 @@ if(nearFogdoor and !global.isBossMet)
 	draw_text(camera_get_view_width(0)/2,camera_get_view_height(0)*0.85-12,"E : Entrer dans le brouillard");
 }
 
+/////////////
+/// DEBUG ///
+/////////////
 
+/*
 draw_set_font(fntDebug);
 draw_set_halign(fa_left);
 draw_text(0,0,"X: "+string(x));
@@ -91,3 +95,4 @@ draw_text(0,45,"INVINCIBLE: "+ string(invincible));
 draw_text(0,60,"HP: "+ string(hp));
 draw_text(0,75,"STAMINA: "+ string(stamina));
 draw_text(0,90,"ALARM 3: "+ string(alarm[3]));
+*/

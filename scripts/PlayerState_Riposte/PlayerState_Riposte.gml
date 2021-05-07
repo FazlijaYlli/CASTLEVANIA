@@ -9,24 +9,27 @@ function PlayerState_Riposte(){
 	{
 		alarm[3] = riposteDuration;
 	}
-	else if(alarm[3] <= riposteDuration and alarm[3] > riposteDuration / 2)
+	else if(alarm[3] <= riposteDuration and alarm[3] > riposteDuration / 3)
 	{
 		image_index = 0;
 	}
-	else if(alarm[3] <= riposteDuration / 2 and alarm[3] > riposteDuration / 3)
+	else if(alarm[3] <= riposteDuration / 3 and alarm[3] > riposteDuration / 4)
 	{
 		image_index = 1;
+		if (!audio_is_playing(sndRiposte))
+		{
+			audio_play_sound(sndRiposte, 0, false);
+		}
 	}
 	else if(alarm[3] <= riposteDuration / 3 and alarm[3] > 0)
 	{
 		riposte = true;
-		oController.shake = true;
+		oController.shake = 2;
 		image_index = 2;
 	}
 	else if(alarm[3] == 0)
 	{
 		alarm[3] = -1;
-		oController.shake = false;
 		riposte = false;
 		state = PLAYERSTATE.MOVING;
 	}

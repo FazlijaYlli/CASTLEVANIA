@@ -54,18 +54,40 @@ if(global.soulsToAdd > 0)
 	AddToSouls(global.soulsToAdd);
 }
 
-if(shake){
-    shakeDur --;
-    view_xview += choose(-shakeForce,shakeForce);
-    view_yview += choose(-shakeForce,shakeForce);
-    if(shakeDur <= 0){
-        shake = false;
-        shakeDur = 5;
-    }
-}else{
-    view_xview = approach(view_xview,0,0.3);
-    view_yview = approach(view_yview,0,0.3);
+var cam = view_camera[0]
+
+//Screenshake :
+if(shake > 0)
+{
+	shakeI++;
+	
+	camx = camera_get_view_x(cam);
+	camy = camera_get_view_y(cam);
+	
+	if(shakeI % 2 == 0)
+	{
+		camx += random_range(-shake,shake);
+		camy += random_range(-shake,shake);
+		camera_set_view_pos(cam,camx,camy);
+	}
+	else
+	{
+		camera_set_view_pos(cam,oPlayer.x-camera_get_view_width(cam)/2,338);	
+	}
+
+	shake *= .9;
+
+	if (shake < .25)
+	{
+		shake = 0;
+	}
 }
+else
+{
+	//Camera following the player
+	camera_set_view_pos(cam,oPlayer.x-camera_get_view_width(cam)/2,338);	
+}
+
 
 //If the boss doesn't exist anymore, delete the fogwall.
 if(!instance_exists(oBoss))
