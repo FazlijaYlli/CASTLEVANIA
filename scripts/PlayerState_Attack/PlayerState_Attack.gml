@@ -46,7 +46,7 @@ function PlayerState_Attack(){
 	var frameHits = ds_list_create();
 	var hits = instance_place_list(x,y,oEnemy,frameHits,false);
 	
-	if(audioCanPlay	and image_index > 2)
+	if(audioCanPlay	and image_index == 2)
 	{
 		audio_play_sound(sndWhip,0,false);
 		audioCanPlay = false;
@@ -74,7 +74,7 @@ function PlayerState_Attack(){
 				with (hitID)
 				{
 					//Whatever happens to the enemy
-					if(hp >= 1)
+					if(state != ENEMYSTATE.DEAD)
 					{
 						state = ENEMYSTATE.HIT;
 					}

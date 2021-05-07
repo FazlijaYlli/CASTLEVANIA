@@ -15,14 +15,16 @@ function BossState_Charge(){
 	else if(alarm[5] <= room_speed and alarm[5] > 0)
 	{
 		image_speed = 12;
-		wSpeed = 3;
+		wSpeed = wSpeed*1.5;
 		hSpeed = 2 * -image_xscale;
 		image_xscale = -move * 2;
 	}
 	else if(alarm[5] == 0)
 	{
+		alarm[5] = -1;
 		hyperarmor = false;
-		state = ENEMYSTATE.MOVING;	
+		sprite_index = sBossWalking;
+		state = ENEMYSTATE.MOVING;
 	}
 	
 	//Vertical Movement

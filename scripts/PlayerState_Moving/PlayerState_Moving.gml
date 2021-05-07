@@ -137,7 +137,6 @@ function PlayerState_Moving(){
 
 	y += vSpeed;	
 
-
 	if(canUseStamina and stamina > 0)
 	{
 		//Going to crouch attack state if attack key is hit while crouching.
@@ -149,11 +148,20 @@ function PlayerState_Moving(){
 		}
 		else if (keyAttack) //Attacking normally while standing.
 		{
-			mask_index = sSimonIdle;
-			sprite_index = sSimonIdle;
-			state = PLAYERSTATE.ATTACK;
-			canUseStamina = false;
-			stamina -= attackStaminaCost;
+			mask_index = sSimonFrontHB;
+			if(place_meeting(x,y,oBoss) and oBoss.state == ENEMYSTATE.POISE_BROKEN)
+			{
+				state = PLAYERSTATE.RIPOSTE;
+				mask_index = sSimonIdle;
+			}
+			else 
+			{
+				mask_index = sSimonIdle;
+				sprite_index = sSimonIdle;
+				state = PLAYERSTATE.ATTACK;
+				canUseStamina = false;
+				stamina -= attackStaminaCost;	
+			}
 		}
 	}
 	
@@ -187,7 +195,7 @@ function PlayerState_Moving(){
 		//If in front a fog door and boss is not met.
 		if(!global.isBossMet)
 		{
-			mask_index = sSimonStairsUpHB;
+			mask_index = sSimonFrontHB;
 			if(place_meeting(x,y,oDoor))
 			{
 				currentDoor = instance_place(x,y,oDoor);
@@ -203,12 +211,6 @@ function PlayerState_Moving(){
 			state = PLAYERSTATE.BONFIRE;
 		}
 		mask_index = sSimonIdle;
-	}
-	
-	//If the boss doesn't exist anymore, delete the fogwall.
-	if(!instance_exists(oBoss))
-	{
-		instance_destroy(currentDoor);
 	}
 }
 

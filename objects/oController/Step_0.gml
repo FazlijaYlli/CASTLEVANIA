@@ -53,3 +53,23 @@ if(global.soulsToAdd > 0)
 	global.showSoulsAdded = true;
 	AddToSouls(global.soulsToAdd);
 }
+
+if(shake){
+    shakeDur --;
+    view_xview += choose(-shakeForce,shakeForce);
+    view_yview += choose(-shakeForce,shakeForce);
+    if(shakeDur <= 0){
+        shake = false;
+        shakeDur = 5;
+    }
+}else{
+    view_xview = approach(view_xview,0,0.3);
+    view_yview = approach(view_yview,0,0.3);
+}
+
+//If the boss doesn't exist anymore, delete the fogwall.
+if(!instance_exists(oBoss))
+{
+	instance_destroy(oPlayer.currentDoor);
+}
+

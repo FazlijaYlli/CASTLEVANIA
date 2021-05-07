@@ -17,6 +17,9 @@ canBeHit = true;
 hitsTaken = 1;
 showDamage = false;
 damageCombo = 0;
+chargeRecovery = room_speed;
+poiseBroken = false;
+stunned = false;
 global.isBossMet = false;
 
 healthbar_width = 600;

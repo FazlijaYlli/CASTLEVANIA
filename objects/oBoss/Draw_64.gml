@@ -1,24 +1,34 @@
 
-/*
 draw_set_font(fntDebug);
 draw_set_halign(fa_left);
 switch(state)
 {
 	case 0:
-		draw_text(0,45,"BOSS_STATE : MOVING");
+		draw_text(0,120,"BOSS_STATE : MOVING");
 		break;
 	case 1:
-		draw_text(0,45,"BOSS_STATE : HIT");
+		draw_text(0,120,"BOSS_STATE : HIT");
 		break;
 	case 2:
-		draw_text(0,45,"BOSS_STATE : DEAD");
+		draw_text(0,120,"BOSS_STATE : DEAD");
+		break;
+	case 3:
+		draw_text(0,120,"BOSS_STATE : CHASE");
+		break;
+	case 4:
+		draw_text(0,120,"BOSS_STATE : CHARGE");
+		break;
+	case 5:
+		draw_text(0,120,"BOSS_STATE : POISE_BROKEN");
+		break;
+	case 6:
+		draw_text(0,120,"BOSS_STATE : RIPOSTED");
 		break;
 }
-draw_text(0,60,"BOSS_HIT_ALARM : " + string(alarm[0]));
-draw_text(0,75,"BOSS_DEATH_ALARM : " + string(alarm[1]));
-draw_text(0,90,"BOSS_HP : " + string(hp));
-draw_text(0,120,"IS_BOSS_MET : " + string(global.isBossMet));
-*/
+
+draw_text(0,105,"ALARM POISE_BROKEN: "+ string(alarm[7]));
+draw_text(0,135,"CAN_BE_HIT: "+ string(canBeHit));
+draw_text(0,150,"POISE_BROKEN: "+ string(poiseBroken));
 
 //Boss Health Bar
 if(global.isBossMet)

@@ -6,4 +6,10 @@ global.showSoulsAdded = false;
 dyingCinematic = false;
 bossDefeated = false;
 fade = 0;
+
+//Screen Shake
+shake = false;
+shakeDur = 5;
+shakeForce = 1;
+
 alarm[0] = -1;

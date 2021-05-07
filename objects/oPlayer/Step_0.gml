@@ -70,4 +70,7 @@ switch (state)
 	case PLAYERSTATE.SPRINT:
 		PlayerState_Sprint();
 	break;
+	case PLAYERSTATE.RIPOSTE:
+		PlayerState_Riposte();
+	break;
 }

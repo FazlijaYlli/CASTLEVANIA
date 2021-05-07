@@ -1,6 +1,11 @@
 healthbar_x = (global.width / 2) - (healthbar_width / 2);
 healthbar_y = global.height * 0.9;
 
+if (hp <= 0)
+{
+	state = ENEMYSTATE.DEAD;	
+}
+
 switch (state)
 {
 	case ENEMYSTATE.MOVING: 
@@ -17,5 +22,11 @@ switch (state)
 	break;
 	case ENEMYSTATE.CHARGE:
 		BossState_Charge();
+	break;
+	case ENEMYSTATE.POISE_BROKEN:
+		BossState_PoiseBroken();
+	break;
+	case ENEMYSTATE.RIPOSTED:
+		BossState_Riposted();
 	break;
 }

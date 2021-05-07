@@ -21,9 +21,9 @@ function BossState_Chase(){
 				}
 				else
 				{
-					if(alarm[1] == -1)
+					if(alarm[2] == -1)
 					{
-						alarm[1] = reactTime;	
+						alarm[2] = reactTime;	
 					}
 				}
 			}
@@ -32,7 +32,7 @@ function BossState_Chase(){
 	
 	if(distance_to_object(oPlayer) >= 30 and distance_to_object(oPlayer) <= 150) 
 	{
-		if(irandom_range(0, (distance_to_object(oPlayer) + 150)) == 1)
+		if(irandom_range(0, ((distance_to_object(oPlayer)+100))) == 1)
 		{
 			state = ENEMYSTATE.CHARGE;
 		}

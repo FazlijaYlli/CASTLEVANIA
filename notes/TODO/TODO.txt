@@ -1,0 +1,5 @@
+TODO : Riposte du joueur. Le joueur sera dans le state "Riposte" et l'ennemi dans le state "Riposted".
+Le joueur prépare une attaque pendant un compteur. À la fin du compteur, le joueur lance une attaque et set
+une variable sur true.
+Pendant ce temps l'ennemi boucle dans son état et ne fait qu'attendre la variable de l'attaque du joueur. 
+Une fois la variable sur true, il se fait pousser violemment vers l'arrière, et prend 5x les dégâts.

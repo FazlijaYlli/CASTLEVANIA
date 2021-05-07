@@ -9,15 +9,17 @@ rollFrames = 25;
 rollStaminaCost = 50;
 jumpHeight = 4.5;
 gravForce = 0.25;
-hp = 500;
+hp = 50000;
 hpMax = hp;
 stamina = 200;
 staminaMax = stamina;
 staminaRegen = 0.75;
 canRegenStamina = true;
 canUseStamina = true;
-damage = 50;
+damage = 75;
 lostHp = 0;
+riposte = false;
+riposteDuration = room_speed*3;
 lostStamina = 0;
 soulCount = 0;
 
@@ -78,4 +80,5 @@ enum PLAYERSTATE
 	BONFIRE,
 	ROLL,
 	SPRINT,
+	RIPOSTE
 }

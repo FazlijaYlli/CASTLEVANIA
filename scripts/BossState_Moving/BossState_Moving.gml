@@ -79,7 +79,7 @@ function BossState_Moving(){
 	}
 	
 	//If the boss touches the player
-	if(place_meeting(x,y,oPlayer))
+	if(place_meeting(x,y,oPlayer) and !stunned)
 	{
 		with(oPlayer)
 		{

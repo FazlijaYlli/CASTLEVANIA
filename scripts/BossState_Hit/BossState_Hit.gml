@@ -2,73 +2,96 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 pour plus d’informations
 function BossState_Hit(){
 	
-	//Horizontal Movement 
-	//hSpeed = move * wSpeed;
-	//Vertical Movement 
-	vSpeed = vSpeed + gravForce;
-	
-	
-	showDamage = true;
-	
-	//Set the time when the damage dissappear.
-	alarm[3] = room_speed*2;	
-	
-	
-	if (hp <= 0)
+	if(!poiseBroken)
 	{
-		state = ENEMYSTATE.DEAD;
-		if (!audio_is_playing(sndEnemyDeath)) 
-		{
-			audio_play_sound(sndEnemyDeath,0,false);
-		}
-	}
+		//Horizontal Movement 
+		//hSpeed = move * wSpeed;
+		//Vertical Movement 
+		vSpeed = vSpeed + gravForce;
 	
-	else if (canBeHit)
-	{
-		//Withdraw HP.
-		hp -= oPlayer.damage;
-		damageCombo += oPlayer.damage;
-		hitsTaken += 1;
+		showDamage = true;
+	
+		//Set the time when the damage dissappear.
+		alarm[3] = room_speed*2;
 		
-		if(!audio_is_playing(sndEnemyHit))
+
+	
+		if (hp <= 0)
 		{
-			audio_play_sound(sndEnemyHit,0,false);
+			state = ENEMYSTATE.DEAD;
+			if (!audio_is_playing(sndEnemyDeath)) 
+			{
+				audio_play_sound(sndEnemyDeath,0,false);
+			}
 		}
-		
-		if(hp > 0)
+		else if (canBeHit)
 		{	
-			//Start the invincibility alarm, which is 0.3s.
-			alarm[0] = room_speed / 6;
-			canBeHit = false;
+			//If the boss is hit during a charge, he will be poise broken.
+			if(alarm[5] <= room_speed and alarm[5] > 0 and hyperarmor = true)
+			{
+				//canBeHit = false;
+				state = ENEMYSTATE.POISE_BROKEN;	
+				poiseBroken = true;
+			}	
+			else
+			{
+				alarm[5] = -1;
+				state = ENEMYSTATE.MOVING;	
+			}
+			
+			if(hp > 0 and alarm[5] == -1)
+			{	
+				//Start the invincibility alarm, which is 0.1666s.
+				alarm[0] = room_speed / 6;
+				canBeHit = false;
+			}
+		
+			//Withdraw HP.
+			hp -= oPlayer.damage;
+			damageCombo += oPlayer.damage;
+			hitsTaken += 1;
+		
+			if(!audio_is_playing(sndEnemyHit))
+			{
+				audio_play_sound(sndEnemyHit,0,false);
+			}
 		}
-	}		
 	
-	//Horizontal Collisions
-	if (place_meeting(x+hSpeed,y,oWall)) 
-	{
-		while(!place_meeting(x+sign(hSpeed),y,oWall)) 
+		//Horizontal Collisions
+		if (place_meeting(x+hSpeed,y,oWall)) 
 		{
-			x += sign(hSpeed);
+			while(!place_meeting(x+sign(hSpeed),y,oWall)) 
+			{
+				x += sign(hSpeed);
+			}
+			move = -move;
 		}
-		move = -move;
-	}
 
-	//Vertical Collisions
-	if (place_meeting(x,y+vSpeed,oWall)) 
-	{
-		while(!place_meeting(x,y+sign(vSpeed),oWall)) 
+		//Vertical Collisions
+		if (place_meeting(x,y+vSpeed,oWall)) 
 		{
-			y += sign(vSpeed);
+			while(!place_meeting(x,y+sign(vSpeed),oWall)) 
+			{
+				y += sign(vSpeed);
+			}
+			vSpeed = 0;
 		}
-		vSpeed = 0;
-	}
 	
-	if(hp > 0 and image_xscale != -move)
-	{
-		image_xscale = -move * 2;
-	}
+		if(hp > 0 and image_xscale != -move)
+		{
+			image_xscale = -move * 2;
+		}
 	
 
-	x += hSpeed
-	y += vSpeed;
+		x += hSpeed
+		y += vSpeed;
+	}
+	else
+	{
+		canBeHit = true;
+		poiseBroken = false;
+		//Reset charge alarm
+		alarm[5] = -1;
+		state = ENEMYSTATE.MOVING;	
+	}
 }

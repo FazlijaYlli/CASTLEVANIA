@@ -42,12 +42,6 @@ if(nearFogdoor and !global.isBossMet)
 }
 
 
-////////////////////////////////////////////
-/////////////////DEBUG//////////////////////
-////////////////////////////////////////////
-
-/*
-
 draw_set_font(fntDebug);
 draw_set_halign(fa_left);
 draw_text(0,0,"X: "+string(x));
@@ -82,14 +76,18 @@ switch(state)
 	case 8:
 		draw_text(0,30,"STATE : BONFIRE");
 	break;
+	case 9:
+		draw_text(0,30,"STATE : ROLL");
+	break;
+	case 10:
+		draw_text(0,30,"STATE : SPRINT");
+	break;
+	case 11:
+		draw_text(0,30,"STATE : RIPOSTE");
+	break;
 }
 
-draw_text(0,105,"INVINCIBLE: "+ string(invincible));
-draw_text(0,135,"HP: "+ string(hp));
-draw_text(0,190,"STAMINA: "+ string(stamina));
-
-*/
-
-////////////////////////////////////////////
-/////////////////DEBUG//////////////////////
-////////////////////////////////////////////
+draw_text(0,45,"INVINCIBLE: "+ string(invincible));
+draw_text(0,60,"HP: "+ string(hp));
+draw_text(0,75,"STAMINA: "+ string(stamina));
+draw_text(0,90,"ALARM 3: "+ string(alarm[3]));

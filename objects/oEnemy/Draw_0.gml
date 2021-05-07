@@ -36,7 +36,6 @@ if(healthbar_show)
 if(showDamage)
 {
 	draw_set_font(fntDamage);
-	draw_set_halign(fa_right);
-	draw_text_transformed(healthbar_x + healthbar_width, healthbar_y,damageCombo,0.05,0.05,0);
-	draw_set_halign(fa_left)
+	draw_set_halign(fa_left);
+	draw_text_transformed(healthbar_x, healthbar_y,damageCombo,0.05,0.05,0);
 }
