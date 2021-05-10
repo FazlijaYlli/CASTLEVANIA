@@ -47,6 +47,6 @@ function BossState_PoiseBroken(){
 	}
 	else
 	{
-		x += -move * 0.05;	
+		//x += -move * 0.05;	
 	}
 }

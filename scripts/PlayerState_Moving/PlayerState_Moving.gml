@@ -146,6 +146,10 @@ function PlayerState_Moving(){
 			canUseStamina = false;
 			stamina -= attackStaminaCost;
 		}
+		else if (keyAttack and keyUp)
+		{
+			instance_create_layer(x,y,"Throwables",oKnife);
+		}
 		else if (keyAttack) //Attacking normally while standing.
 		{
 			mask_index = sSimonFrontHB;

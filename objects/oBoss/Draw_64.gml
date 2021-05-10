@@ -2,9 +2,10 @@
 /// DEBUG ///
 /////////////
 
-/*
 draw_set_font(fntDebug);
 draw_set_halign(fa_left);
+draw_text(0,0,"BOSS X: "+string(x));
+draw_text(0,15,"BOSS Y: "+string(y));
 switch(state)
 {
 	case 0:
@@ -34,7 +35,6 @@ draw_text(0,105,"ALARM POISE_BROKEN: "+ string(alarm[7]));
 draw_text(0,135,"CAN_BE_HIT: "+ string(canBeHit));
 draw_text(0,150,"POISE_BROKEN: "+ string(poiseBroken));
 
-*/
 
 //Boss Health Bar
 if(global.isBossMet)

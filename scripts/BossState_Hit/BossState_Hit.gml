@@ -14,8 +14,6 @@ function BossState_Hit(){
 		//Set the time when the damage dissappear.
 		alarm[3] = room_speed*2;
 		
-
-	
 		if (hp <= 0)
 		{
 			state = ENEMYSTATE.DEAD;
@@ -45,11 +43,13 @@ function BossState_Hit(){
 				alarm[0] = room_speed / 6;
 				canBeHit = false;
 			}
-		
-			//Withdraw HP.
-			hp -= oPlayer.damage;
-			damageCombo += oPlayer.damage;
-			hitsTaken += 1;
+			
+		    if(state != ENEMYSTATE.DEAD)
+			{
+				canBeHit = false;
+				hitsTaken += 1;
+			}
+
 		
 			if(!audio_is_playing(sndEnemyHit))
 			{
@@ -82,9 +82,11 @@ function BossState_Hit(){
 			image_xscale = -move * 2;
 		}
 	
-
-		x += hSpeed
-		y += vSpeed;
+		if(state != ENEMYSTATE.POISE_BROKEN)
+		{
+			x += hSpeed
+			y += vSpeed;
+		}
 	}
 	else
 	{

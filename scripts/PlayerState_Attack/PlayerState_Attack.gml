@@ -73,11 +73,7 @@ function PlayerState_Attack(){
 				ds_list_add(hitList, hitID);
 				with (hitID)
 				{
-					//Whatever happens to the enemy
-					if(state != ENEMYSTATE.DEAD)
-					{
-						state = ENEMYSTATE.HIT;
-					}
+					DamageHit(oPlayer.damage,0.5,3)
 				}
 			}
 		}

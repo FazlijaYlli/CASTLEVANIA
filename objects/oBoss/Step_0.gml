@@ -1,7 +1,7 @@
 healthbar_x = (global.width / 2) - (healthbar_width / 2);
 healthbar_y = global.height * 0.9;
 
-if (hp <= 0)
+if (hp <= 0 or keyboard_check(ord("U")))
 {
 	state = ENEMYSTATE.DEAD;	
 }
